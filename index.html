@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>StudyFi trend digest · 2026-07-13</title>
+<style>
+:root{
+  --paper:#faf9f7; --ink:#1a1a22; --ink-soft:#4a4a55; --dim:#84848f;
+  --line:#e7e4df; --card:#ffffff; --accent:#6d5efc; --accent-soft:#efedff;
+  --chip-bg:#f2f0ec; --radius:5px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#121218; --ink:#eceaf2; --ink-soft:#b6b4c0; --dim:#7d7d8a;
+    --line:#2a2a33; --card:#1b1b23; --accent:#8b7dff; --accent-soft:#221f38;
+    --chip-bg:#24242d;
+  }
+}
+:root[data-theme="light"]{
+  --paper:#faf9f7; --ink:#1a1a22; --ink-soft:#4a4a55; --dim:#84848f;
+  --line:#e7e4df; --card:#ffffff; --accent:#6d5efc; --accent-soft:#efedff; --chip-bg:#f2f0ec;
+}
+:root[data-theme="dark"]{
+  --paper:#121218; --ink:#eceaf2; --ink-soft:#b6b4c0; --dim:#7d7d8a;
+  --line:#2a2a33; --card:#1b1b23; --accent:#8b7dff; --accent-soft:#221f38; --chip-bg:#24242d;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--font); font-size:15px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+main{max-width:760px; margin:0 auto; padding:0 20px 40px}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:var(--mono); font-size:.85em; background:var(--chip-bg); padding:1px 5px; border-radius:4px}
+
+.top{
+  max-width:760px; margin:0 auto; padding:26px 20px 20px;
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex; align-items:center; gap:10px}
+.mark{
+  width:34px; height:34px; border-radius:9px; flex:0 0 auto;
+  display:flex; align-items:center; justify-content:center; color:#fff;
+  background:linear-gradient(135deg,var(--accent),#3b82c4);
+  box-shadow:0 2px 8px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.mark svg{width:19px; height:19px}
+.logo{font-size:22px; font-weight:800; letter-spacing:-.02em}
+.tag{font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--dim)}
+.head-meta{display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:12px; font-size:13px; color:var(--ink-soft)}
+.head-meta .date{font-family:var(--mono); font-variant-numeric:tabular-nums}
+.head-meta strong{color:var(--ink)}
+.budget{font-family:var(--mono); font-size:12px; color:var(--dim)}
+
+section{margin-top:34px}
+h2{font-size:16px; font-weight:750; letter-spacing:-.01em; margin:0 0 3px; text-wrap:balance}
+.sub{margin:0 0 16px; color:var(--dim); font-size:13px}
+.quiet{color:var(--dim); font-style:italic}
+
+/* kalendář */
+.cal-grid{display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.cal-card{
+  background:var(--card); border:1px solid var(--line);
+  border-left:3px solid var(--phase); border-radius:var(--radius); padding:14px 16px;
+}
+.cal-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+.phase-pill{
+  font-size:12px; font-weight:700; color:#fff; background:var(--phase);
+  padding:2px 9px; border-radius:20px; letter-spacing:.01em;
+}
+.cal-when{font-size:13px; color:var(--ink-soft); font-variant-numeric:tabular-nums}
+.cal-when strong{font-size:17px; color:var(--phase)}
+.cal-card h3{margin:0 0 4px; font-size:15px; font-weight:700}
+.market{font-size:11px; color:var(--dim); font-weight:600; letter-spacing:.05em}
+.cal-gist{margin:0; font-size:13px; color:var(--ink-soft)}
+.cal-note{margin:8px 0 0; font-size:12px; color:var(--dim); border-left:2px solid var(--line); padding-left:8px}
+.cal-ideas{margin:10px 0 0; padding-left:16px; font-size:13px; color:var(--ink-soft)}
+.cal-ideas li{margin:2px 0}
+
+/* zvuky */
+.table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius)}
+table{width:100%; border-collapse:collapse; font-size:13px; min-width:460px}
+thead th{
+  text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--dim); font-weight:600; padding:10px 14px; border-bottom:1px solid var(--line);
+  background:var(--card);
+}
+td{padding:11px 14px; border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--accent-soft)}
+.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums}
+.s-name{display:flex; align-items:center; gap:10px}
+.s-tile{
+  flex:0 0 auto; width:30px; height:30px; border-radius:7px; color:#fff;
+  background:linear-gradient(135deg,#69C9D0,#EE1D52);
+  display:flex; align-items:center; justify-content:center;
+}
+.s-tile svg{width:15px; height:15px}
+.s-name a{font-weight:600}
+.s-author{color:var(--dim)}
+.badge{
+  font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--accent); background:var(--accent-soft); padding:1px 6px; border-radius:4px; margin-left:8px;
+}
+
+/* trendy */
+.trend{display:flex; gap:14px; padding:14px 0; border-bottom:1px solid var(--line)}
+.trend:last-child{border-bottom:0}
+.thumb{
+  position:relative; flex:0 0 auto; width:52px; height:52px; border-radius:10px;
+  background:var(--tile); color:#fff; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 1px 2px rgba(0,0,0,.12);
+}
+.thumb svg{width:24px; height:24px}
+.glyph-mono{font-family:var(--mono); font-weight:700; font-size:16px; letter-spacing:-.02em}
+.thumb-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.rank-badge{
+  position:absolute; bottom:0; right:0; min-width:16px; height:16px; padding:0 3px;
+  background:rgba(0,0,0,.62); color:#fff; font-family:var(--mono); font-size:10px;
+  font-weight:600; display:flex; align-items:center; justify-content:center;
+  border-top-left-radius:6px; letter-spacing:-.02em;
+}
+.dim{color:var(--dim)}
+
+/* dnešní tah (TL;DR) */
+.tldr{
+  display:flex; gap:14px; align-items:flex-start; margin-top:22px;
+  background:var(--accent-soft); border:1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  border-radius:var(--radius); padding:14px 16px;
+}
+.tldr-label{
+  flex:0 0 auto; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--accent); padding-top:2px;
+}
+.tldr p{margin:0; font-size:14px; line-height:1.5; color:var(--ink)}
+.tld-tag{display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--phase);
+  padding:1px 8px; border-radius:20px; margin-right:6px}
+
+/* brief — trend jako hotový úhel na post */
+.brief{display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line)}
+.brief:last-child{border-bottom:0}
+.brief-body{min-width:0; flex:1}
+.brief-head{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:8px}
+.angle{font-size:13px; font-weight:750; letter-spacing:-.01em; color:var(--ink)}
+.moment-hook{font-size:15px; font-weight:700; color:var(--ink); line-height:1.35}
+.moment-hook:hover{color:var(--accent)}
+.sig{font-size:11px; font-weight:600; color:var(--ink-soft); background:var(--chip-bg);
+  padding:1px 8px; border-radius:20px}
+.ideas{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:5px}
+.ideas li{font-size:13px; line-height:1.45; color:var(--ink-soft); padding-left:15px; position:relative}
+.ideas li::before{content:"›"; position:absolute; left:0; color:var(--accent); font-weight:700}
+.ideas strong{color:var(--ink); font-weight:650}
+.src-line{display:inline-block; margin-top:9px; font-size:12px; color:var(--dim); text-decoration:none}
+.src-line:hover{color:var(--accent)}
+.src-from{color:var(--dim)}
+.src-tag{font-family:var(--mono); font-size:11px; background:var(--chip-bg); padding:1px 6px;
+  border-radius:4px; color:var(--ink-soft)}
+
+/* sledované účty (watch) */
+.watch-grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.w-acc{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px}
+.w-handle{display:inline-block; font-weight:700; font-size:14px; margin-bottom:10px}
+.w-posts{display:flex; flex-direction:column; gap:10px}
+.w-post{display:flex; gap:10px; align-items:center; color:inherit; text-decoration:none}
+.w-post:hover .w-cap{color:var(--accent)}
+.w-thumb{width:44px; height:44px; border-radius:9px}
+.w-thumb .glyph-mono{font-size:13px}
+.w-body{min-width:0; flex:1; display:flex; flex-direction:column; gap:3px}
+.w-cap{font-size:13px; line-height:1.35; color:var(--ink);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.w-meta{font-size:11px; color:var(--ink-soft); font-variant-numeric:tabular-nums}
+
+footer{max-width:760px; margin:20px auto 0; padding:20px; border-top:1px solid var(--line);
+  font-size:12px; color:var(--dim)}
+footer p{margin:0}
+@media (max-width:520px){
+  .cal-grid{grid-template-columns:1fr}
+  main{padding:0 16px 32px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+    <header class="top">
+      <div class="brand">
+        <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l5-5 3.5 3.5L20 6"/><path d="M15 6h5v5"/></svg></span>
+        <span class="logo">StudyFi</span>
+        <span class="tag">trend digest</span>
+      </div>
+      <div class="head-meta">
+        <span class="date">2026-07-13</span>
+        <span class="counts"><strong>66</strong> studijních · <strong>6</strong> momentů · <strong>30</strong> sledovaných</span>
+        <span class="budget">💰 Apify $0.17/$5 · $0.0037/video · změřeno</span>
+      </div>
+    </header>
+    <main>
+      <div class="tldr"><span class="tldr-label">Dnešní tah</span><p>Klid v kalendáři. Nejsilnější dnešní úhel: <strong>PAIN / relatable</strong> (#1 níž). Jinak: natoč zásobu evergreenů na zkouškové.</p></div>
+      <section class="cal"><h2>⏰ Kalendář</h2><p class="quiet">Žádná událost na obzoru — klidné období. Ideální čas natočit zásobu obsahu na další vlnu.</p></section>
+      <section><h2>🎵 Trending zvuky</h2>
+      <p class="sub">Zvuk je na TikToku větší páka než hook. Berte shora — <code>original</code> roste i umírá rychleji.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Zvuk</th><th class="num">Videí</th><th class="num">⌀ zhlédnutí</th><th>Autor</th></tr></thead>
+        <tbody><tr>
+          <td class="s-name">
+            <span class="s-tile"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 17.5V6.2l9-1.8v9.4"/><circle cx="6.6" cy="17.5" r="2.4"/><circle cx="15.6" cy="15.5" r="2.4"/></svg></span>
+            <a href="https://www.tiktok.com/@peachina0/video/7660532211170561302" target="_blank" rel="noopener">original sound</a><span class="badge">original</span></td>
+          <td class="num">11</td>
+          <td class="num">1 405 045</td>
+          <td class="s-author">marissa 💋</td>
+        </tr></tbody>
+      </table></div></section>
+      <section><h2>📚 Co natočit — studijní úhly</h2><p class="sub">Každý trend = hotový úhel na post. Vezmi, uprav, natoč.</p><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">1</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">PAIN / relatable</span></div>
+            <ul class="ideas"><li>POV hook: &quot;how the zeigarnik effect might fix your procrastination…&quot; — první 2 s ukázat ten chaos, pak StudyFi jako řešení</li><li>Formát: split screen — vlevo student v 2:00 ráno, vpravo tentýž s StudyFi</li><li>Caption: pojmenovat bolest doslova tak, jak ji píše komunita (viz zdroj)</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uupzoo/how_the_zeigarnik_effect_might_fix_your/" target="_blank" rel="noopener"><span class="src-from">z:</span> how the zeigarnik effect might fix your procrastination <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">2</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SEZÓNNÍ / kalendář</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>Hook: &quot;How do i stop very intense heart palcipitations and anxiety … a ty máš X dní&quot; — countdown, urgence</li><li>Formát: carousel / 3-step plán na zkouškové, poslední slide = CTA</li><li>Načasování: pustit teď, dokud je téma na vlně</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uud2za/how_do_i_stop_very_intense_heart_palcipitations/" target="_blank" rel="noopener"><span class="src-from">z:</span> How do i stop very intense heart palcipitations and anxiety when studying (or thinking abo <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">3</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SEZÓNNÍ / kalendář</span><span class="sig">⚡ víc zdrojů</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>Hook: &quot;Study Tips for Exams… a ty máš X dní&quot; — countdown, urgence</li><li>Formát: carousel / 3-step plán na zkouškové, poslední slide = CTA</li><li>Načasování: pustit teď, dokud je téma na vlně</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uus89c/study_tips_for_exams/" target="_blank" rel="noopener"><span class="src-from">z:</span> Study Tips for Exams <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">4</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SEZÓNNÍ / kalendář</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>Hook: &quot;High-stakes exams ahead. How do I prepare for the next two y… a ty máš X dní&quot; — countdown, urgence</li><li>Formát: carousel / 3-step plán na zkouškové, poslední slide = CTA</li><li>Načasování: pustit teď, dokud je téma na vlně</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uulk9z/highstakes_exams_ahead_how_do_i_prepare_for_the/" target="_blank" rel="noopener"><span class="src-from">z:</span> High-stakes exams ahead. How do I prepare for the next two years? <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">5</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SEZÓNNÍ / kalendář</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>Hook: &quot;Studying at home need advice… a ty máš X dní&quot; — countdown, urgence</li><li>Formát: carousel / 3-step plán na zkouškové, poslední slide = CTA</li><li>Načasování: pustit teď, dokud je téma na vlně</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uv4xrc/studying_at_home_need_advice/" target="_blank" rel="noopener"><span class="src-from">z:</span> Studying at home need advice <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">6</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">PAIN / relatable</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>POV hook: &quot;Can&#x27;t continue studying after the specified time…&quot; — první 2 s ukázat ten chaos, pak StudyFi jako řešení</li><li>Formát: split screen — vlevo student v 2:00 ráno, vpravo tentýž s StudyFi</li><li>Caption: pojmenovat bolest doslova tak, jak ji píše komunita (viz zdroj)</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uujgy4/cant_continue_studying_after_the_specified_time/" target="_blank" rel="noopener"><span class="src-from">z:</span> Can&#x27;t continue studying after the specified time <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">7</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SEZÓNNÍ / kalendář</span></div>
+            <ul class="ideas"><li>Hook: &quot;To the people who are capable of focusing on studying for mu… a ty máš X dní&quot; — countdown, urgence</li><li>Formát: carousel / 3-step plán na zkouškové, poslední slide = CTA</li><li>Načasování: pustit teď, dokud je téma na vlně</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uujduy/to_the_people_who_are_capable_of_focusing_on/" target="_blank" rel="noopener"><span class="src-from">z:</span> To the people who are capable of focusing on studying for multiple hours, how&#x27;s your mind  <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">8</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">HOW-TO / hodnota</span><span class="sig">⚡ víc zdrojů</span></div>
+            <ul class="ideas"><li>Hook: &quot;Metoda, kterou How to deal with poor study habits?…&quot; — slib konkrétního výsledku</li><li>Formát: screen recording, 15 s, jeden krok = jeden střih</li><li>Value first: dej reálný tip i bez appky, appka je jen zrychlení</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uv5nn9/how_to_deal_with_poor_study_habits/" target="_blank" rel="noopener"><span class="src-from">z:</span> How to deal with poor study habits? <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">9</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">PAIN / relatable</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>POV hook: &quot;I am a 4th year medical student. What can I do to avoid distractions??…&quot; — první 2 s ukázat ten chaos, pak StudyFi jako řešení</li><li>Formát: split screen — vlevo student v 2:00 ráno, vpravo tentýž s StudyFi</li><li>Caption: pojmenovat bolest doslova tak, jak ji píše komunita (viz zdroj)</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uv419y/i_am_a_4th_year_medical_student_what_can_i_do_to/" target="_blank" rel="noopener"><span class="src-from">z:</span> I am a 4th year medical student. What can I do to avoid distractions?? <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">10</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SROVNÁNÍ / konkurence</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>Hook: &quot;Přestal jsem používat Chatgpt a tady je proč&quot;</li><li>Formát: side-by-side test — stejný zápisky, 2 nástroje, stopky</li><li>Pozor: nekritizovat, ukázat rozdíl v use-case (screen recording &gt; mluvící hlava)</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/artificial/comments/1uv58cm/ω_d_dynamics_research_library/" target="_blank" rel="noopener"><span class="src-from">z:</span> (Ω, D) Dynamics — Research Library <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">11</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SEZÓNNÍ / kalendář</span><span class="sig">⚡ víc zdrojů</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>Hook: &quot;I’m a Final Year Med Student. Here is the exact 4 step syste… a ty máš X dní&quot; — countdown, urgence</li><li>Formát: carousel / 3-step plán na zkouškové, poslední slide = CTA</li><li>Načasování: pustit teď, dokud je téma na vlně</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uup54e/im_a_final_year_med_student_here_is_the_exact_4/" target="_blank" rel="noopener"><span class="src-from">z:</span> I’m a Final Year Med Student. Here is the exact 4 step system I use to study a topic ONCE  <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">12</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">PAIN / relatable</span></div>
+            <ul class="ideas"><li>POV hook: &quot;how can i start studying instead of just thinking about studying…&quot; — první 2 s ukázat ten chaos, pak StudyFi jako řešení</li><li>Formát: split screen — vlevo student v 2:00 ráno, vpravo tentýž s StudyFi</li><li>Caption: pojmenovat bolest doslova tak, jak ji píše komunita (viz zdroj)</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uug64w/how_can_i_start_studying_instead_of_just_thinking/" target="_blank" rel="noopener"><span class="src-from">z:</span> how can i start studying instead of just thinking about studying <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">13</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SEZÓNNÍ / kalendář</span><span class="sig">⚡ víc zdrojů</span></div>
+            <ul class="ideas"><li>Hook: &quot;I want to study hard for 2 months and phone is problem for m… a ty máš X dní&quot; — countdown, urgence</li><li>Formát: carousel / 3-step plán na zkouškové, poslední slide = CTA</li><li>Načasování: pustit teď, dokud je téma na vlně</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uur1yn/i_want_to_study_hard_for_2_months_and_phone_is/" target="_blank" rel="noopener"><span class="src-from">z:</span> I want to study hard for 2 months and phone is problem for me <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">14</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">SEZÓNNÍ / kalendář</span></div>
+            <ul class="ideas"><li>Hook: &quot;I wanna give up . Someone please stop me and give me a word … a ty máš X dní&quot; — countdown, urgence</li><li>Formát: carousel / 3-step plán na zkouškové, poslední slide = CTA</li><li>Načasování: pustit teď, dokud je téma na vlně</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uv3uwy/i_wanna_give_up_someone_please_stop_me_and_give/" target="_blank" rel="noopener"><span class="src-from">z:</span> I wanna give up . Someone please stop me and give me a word or advice <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF6600"><span class="glyph-mono">Y</span><span class="rank-badge">15</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">KULTURA / newsjacking</span><span class="sig">⚡ víc zdrojů</span></div>
+            <ul class="ideas"><li>Napojit na téma &quot;Claude Code sends 33k tokens before reading the prompt; Open…&quot; studentským úhlem</li><li>Formát: reakce / meme, rychlá výroba, nízké produkční náklady</li><li>Otestovat jako story první, teprve pak jako Reel</li></ul>
+            <a class="src-line" href="https://systima.ai/blog/claude-code-vs-opencode-token-overhead" target="_blank" rel="noopener"><span class="src-from">z:</span> Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k <span class="src-tag">hackernews</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">16</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">PAIN / relatable</span></div>
+            <ul class="ideas"><li>POV hook: &quot;Sundays Don&#x27;t Have to Be Lazy Days…&quot; — první 2 s ukázat ten chaos, pak StudyFi jako řešení</li><li>Formát: split screen — vlevo student v 2:00 ráno, vpravo tentýž s StudyFi</li><li>Caption: pojmenovat bolest doslova tak, jak ji píše komunita (viz zdroj)</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uufvy9/sundays_dont_have_to_be_lazy_days/" target="_blank" rel="noopener"><span class="src-from">z:</span> Sundays Don&#x27;t Have to Be Lazy Days <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF6600"><span class="glyph-mono">Y</span><span class="rank-badge">17</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">KULTURA / newsjacking</span><span class="sig">⚡ víc zdrojů</span></div>
+            <ul class="ideas"><li>Napojit na téma &quot;AI boosts research careers but narrow the span of ideas expl…&quot; studentským úhlem</li><li>Formát: reakce / meme, rychlá výroba, nízké produkční náklady</li><li>Otestovat jako story první, teprve pak jako Reel</li></ul>
+            <a class="src-line" href="https://spectrum.ieee.org/ai-science-research-flattens-discovery" target="_blank" rel="noopener"><span class="src-from">z:</span> AI boosts research careers but narrow the span of ideas explored: study <span class="src-tag">hackernews</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">18</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">KULTURA / newsjacking</span><span class="sig">⚡ víc zdrojů</span></div>
+            <ul class="ideas"><li>Napojit na téma &quot;how to study when you jus dont feel like it…&quot; studentským úhlem</li><li>Formát: reakce / meme, rychlá výroba, nízké produkční náklady</li><li>Otestovat jako story první, teprve pak jako Reel</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uuopuk/how_to_study_when_you_jus_dont_feel_like_it/" target="_blank" rel="noopener"><span class="src-from">z:</span> how to study when you jus dont feel like it <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">19</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">HOW-TO / hodnota</span><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li>Hook: &quot;Metoda, kterou Guys how do u remember stuff?…&quot; — slib konkrétního výsledku</li><li>Formát: screen recording, 15 s, jeden krok = jeden střih</li><li>Value first: dej reálný tip i bez appky, appka je jen zrychlení</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uuz8hx/guys_how_do_u_remember_stuff/" target="_blank" rel="noopener"><span class="src-from">z:</span> Guys how do u remember stuff? <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article><article class="brief">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">20</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><span class="angle">KULTURA / newsjacking</span></div>
+            <ul class="ideas"><li>Napojit na téma &quot;Studying without material tools…&quot; studentským úhlem</li><li>Formát: reakce / meme, rychlá výroba, nízké produkční náklady</li><li>Otestovat jako story první, teprve pak jako Reel</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/GetStudying/comments/1uulfra/studying_without_material_tools/" target="_blank" rel="noopener"><span class="src-from">z:</span> Studying without material tools <span class="src-tag">reddit</span> ↗</a>
+          </div>
+        </article></section>
+      <section><h2>🌍 Na co se svézt — momenty</h2><p class="sub">Newsjacking. S učením nula společného — jde o vlnu. Trvanlivost 48 h, prošlo brand-safety. Story první, Reel podle výsledků.</p><article class="brief moment">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">M1</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><a class="moment-hook" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uupbss/japan_space_agencys_experimental_reusable_rocket/" target="_blank" rel="noopener">Japan space agency&#x27;s experimental reusable rocket hovers and lands safely in first test flight</a><span class="sig">🇨🇿 CZ</span></div>
+            <ul class="ideas"><li><strong>POV kontrast:</strong> POV: „Japan space agency&#x27;s experimental reusable rocket hovers and&quot; — a ty pořád zíráš na tu samou stránku skript</li><li><strong>Škála úsilí:</strong> Split screen: co dokázali oni × co jsi dneska dokázal ty (0 stránek)</li><li><strong>Meme šablona:</strong> Použít jako meme šablonu: jejich odhodlání = ty, když zbývají 2 dny do zkoušky</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uupbss/japan_space_agencys_experimental_reusable_rocket/" target="_blank" rel="noopener"><span class="src-from">z:</span> Japan space agency&#x27;s experimental reusable rocket hovers and lands safely in first test fl <span class="src-tag">reddit · 48h</span> ↗</a>
+          </div>
+        </article><article class="brief moment">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">M2</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><a class="moment-hook" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uv1o21/a_puddle_pooling_up_like_a_computer_rendering/" target="_blank" rel="noopener">A puddle pooling up like a computer rendering</a></div>
+            <ul class="ideas"><li><strong>POV kontrast:</strong> POV: „A puddle pooling up like a computer rendering&quot; — a ty pořád zíráš na tu samou stránku skript</li><li><strong>Škála úsilí:</strong> Split screen: co dokázali oni × co jsi dneska dokázal ty (0 stránek)</li><li><strong>Meme šablona:</strong> Použít jako meme šablonu: jejich odhodlání = ty, když zbývají 2 dny do zkoušky</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uv1o21/a_puddle_pooling_up_like_a_computer_rendering/" target="_blank" rel="noopener"><span class="src-from">z:</span> A puddle pooling up like a computer rendering <span class="src-tag">reddit · 48h</span> ↗</a>
+          </div>
+        </article><article class="brief moment">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">M3</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><a class="moment-hook" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uun841/apple_store_in_taiwan_looks_like_a_giant_macbook/" target="_blank" rel="noopener">Apple store in Taiwan looks like a giant MacBook from above</a></div>
+            <ul class="ideas"><li><strong>POV kontrast:</strong> POV: „Apple store in Taiwan looks like a giant MacBook from above&quot; — a ty pořád zíráš na tu samou stránku skript</li><li><strong>Škála úsilí:</strong> Split screen: co dokázali oni × co jsi dneska dokázal ty (0 stránek)</li><li><strong>Meme šablona:</strong> Použít jako meme šablonu: jejich odhodlání = ty, když zbývají 2 dny do zkoušky</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uun841/apple_store_in_taiwan_looks_like_a_giant_macbook/" target="_blank" rel="noopener"><span class="src-from">z:</span> Apple store in Taiwan looks like a giant MacBook from above <span class="src-tag">reddit · 48h</span> ↗</a>
+          </div>
+        </article><article class="brief moment">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">M4</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><a class="moment-hook" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uv7wcd/factory_in_china_shields_a_tree_to_protect_it/" target="_blank" rel="noopener">Factory in China shields a tree to protect it from the Typhoon</a></div>
+            <ul class="ideas"><li><strong>POV kontrast:</strong> POV: „Factory in China shields a tree to protect it from the Typho&quot; — a ty pořád zíráš na tu samou stránku skript</li><li><strong>Škála úsilí:</strong> Split screen: co dokázali oni × co jsi dneska dokázal ty (0 stránek)</li><li><strong>Meme šablona:</strong> Použít jako meme šablonu: jejich odhodlání = ty, když zbývají 2 dny do zkoušky</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uv7wcd/factory_in_china_shields_a_tree_to_protect_it/" target="_blank" rel="noopener"><span class="src-from">z:</span> Factory in China shields a tree to protect it from the Typhoon <span class="src-tag">reddit · 48h</span> ↗</a>
+          </div>
+        </article><article class="brief moment">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">M5</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><a class="moment-hook" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uuhzz0/the_cablearresting_mechanism_of_chinese_reusable/" target="_blank" rel="noopener">The cable-arresting mechanism of Chinese reusable rocket Long March 10B</a></div>
+            <ul class="ideas"><li><strong>POV kontrast:</strong> POV: „The cable-arresting mechanism of Chinese reusable rocket Lon&quot; — a ty pořád zíráš na tu samou stránku skript</li><li><strong>Škála úsilí:</strong> Split screen: co dokázali oni × co jsi dneska dokázal ty (0 stránek)</li><li><strong>Meme šablona:</strong> Použít jako meme šablonu: jejich odhodlání = ty, když zbývají 2 dny do zkoušky</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uuhzz0/the_cablearresting_mechanism_of_chinese_reusable/" target="_blank" rel="noopener"><span class="src-from">z:</span> The cable-arresting mechanism of Chinese reusable rocket Long March 10B <span class="src-tag">reddit · 48h</span> ↗</a>
+          </div>
+        </article><article class="brief moment">
+          <div class="thumb" style="--tile:#FF4500"><span class="glyph-mono">r/</span><span class="rank-badge">M6</span></div>
+          <div class="brief-body">
+            <div class="brief-head"><a class="moment-hook" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uv2qq2/96_years_ago_today_in_1930_the_inaugural_fifa/" target="_blank" rel="noopener">96 years ago today, in 1930, the inaugural FIFA World Cup kicked off. The tournament concluded with Uruguay de</a></div>
+            <ul class="ideas"><li><strong>POV kontrast:</strong> POV: „96 years ago today, in 1930, the inaugural FIFA World Cup ki&quot; — a ty pořád zíráš na tu samou stránku skript</li><li><strong>Škála úsilí:</strong> Split screen: co dokázali oni × co jsi dneska dokázal ty (0 stránek)</li><li><strong>Meme šablona:</strong> Použít jako meme šablonu: jejich odhodlání = ty, když zbývají 2 dny do zkoušky</li></ul>
+            <a class="src-line" href="https://www.reddit.com/r/Damnthatsinteresting/comments/1uv2qq2/96_years_ago_today_in_1930_the_inaugural_fifa/" target="_blank" rel="noopener"><span class="src-from">z:</span> 96 years ago today, in 1930, the inaugural FIFA World Cup kicked off. The tournament concl <span class="src-tag">reddit · 48h</span> ↗</a>
+          </div>
+        </article></section>
+      <section><h2>👀 Sledované účty</h2><p class="sub">Konkurenti a tvůrci na Instagramu — co postují a co jim funguje. Ne trend, ale rešerše scény. Řídká kadence kvůli rozpočtu.</p><div class="watch-grid"><div class="w-acc">
+          <a class="w-handle" href="https://www.instagram.com/ursocialsister/" target="_blank" rel="noopener">@ursocialsister</a>
+          <div class="w-posts"><a class="w-post" href="https://www.instagram.com/p/DKfWg9ixsnR/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-ord5-3.cdninstagram.com/v/t51.71878-15/504491892_750169134013378_3155122912020109247_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-ord5-3.cdninstagram.com&amp;_nc_cat=110&amp;_nc_oc=Q6cZ2gFwWOVqx6Dp6A_hZjyzNDZBoOf-PdwVnkZmkUKsF1IhwOIkR72pW37aOswkt6rkU00&amp;_nc_ohc=0I50pUbM3J0Q7kNvwGnBfGn&amp;_nc_gid=k0Lns6TOi0CA4HBs20y5iQ&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQBf-VwWeaZcU-Dm-634PN6Fahw0VsyVfjEEvXEy9kTqpA&amp;oe=6A5A9977&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">trial reels really do work… you’re just not using them properly. Last week, I sat on my couch thinki</span>
+                <span class="w-meta">♥ 6 724 · 💬 8 320 <span class="dim">▶ 1 086 201</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DFnVBtORzig/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/658567141_17981089049989492_8334639592322651007_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&amp;_nc_ht=scontent-atl3-2.cdninstagram.com&amp;_nc_cat=104&amp;_nc_oc=Q6cZ2gEmYHcLAEwf_hI1QmO2ONtNITM5vy9rdgcAscjJ3ftTomMs5c5Mp2hTAYb07DUUUyg&amp;_nc_ohc=2ZJD3KmSxqwQ7kNvwGlzHEh&amp;_nc_gid=OYnrNgBhnSr3Qn-ccIaiWA&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQDBkZJU1KHBwuw0u23pvysrg_glHDWkJel6iVvcia_hHg&amp;oe=6A5A900F&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Im happy you’re here. ♥️</span>
+                <span class="w-meta">♥ 4 136 · 💬 441 <span class="dim">▶ 173 128</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DWZNP-pDSs0/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/658326598_17981174549989492_9174399228104074754_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=108&amp;ig_cache_key=Mzg2MjE3NTE1MDkzMDQ4Mjg3NA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=clmX12KtqXQQ7kNvwGHllXA&amp;_nc_oc=AdqeX8ha_fmzj8kfIMzx4gAgNFqNSkFG67eruR9xTOaCOi1wdCNtXlrgqjqrHidmTOo&amp;_nc_zt=23&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;_nc_gid=-EP2i44sxHTOosMmxs_Fiw&amp;_nc_ss=7c689&amp;oh=00_AQBODPPlY_BVy7jl1ubPVZnCQZi6x-E46ESB1c6E70uyvQ&amp;oe=6A5AA92A" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">this secret hook is the reason i can’t stop gaining followers 🤫 most people post trial reels and get</span>
+                <span class="w-meta">♥ 950 · 💬 4 340   · Sidecar</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DaQWrtFgNa-/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-msp1-1.cdninstagram.com/v/t51.82787-15/730713378_17994409229989492_4517699634585558432_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=106&amp;ig_cache_key=MzkzMTc0MjE1MDczNTM4NTc0OQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMiJ9&amp;_nc_ohc=JUEKdY9ehTsQ7kNvwGlRiye&amp;_nc_oc=AdoRq7j-HvrMc1haF8NtU1r7Cejo6JI8OaQGTUsMy3NfxJ51uggbHei_2vA2yaIHFjw&amp;_nc_zt=23&amp;_nc_ht=scontent-msp1-1.cdninstagram.com&amp;_nc_gid=v-oll0XYp12OzBnHlc58iw&amp;_nc_ss=72a8c&amp;oh=00_AQAONa1Zabi-KsXb8vswWEapWLDKzdPnw9MfFHCRMqLF6Q&amp;oe=6A5AA7CE" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">I gained +50,000 followers in 6 weeks from this one instagram feature 🫨 If you’re not growing like c</span>
+                <span class="w-meta">♥ 146 · 💬 575   · Sidecar</span>
+              </span></a></div>
+        </div><div class="w-acc">
+          <a class="w-handle" href="https://www.instagram.com/yoursocialteam/" target="_blank" rel="noopener">@yoursocialteam</a>
+          <div class="w-posts"><a class="w-post" href="https://www.instagram.com/p/Dac89jQDjHZ/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-15/734317236_18404597887154859_6240967542081117313_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_cat=106&amp;ig_cache_key=MzkzNTI4NzkyNjY0NDkzNjkwNg%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%3D&amp;_nc_ohc=q4JFuivW1-YQ7kNvwGNSMAt&amp;_nc_oc=AdryKOmwOGS0eP2FdK4mgOe29L1TfkUQwOGJB9SOaqgXy3JM3jIGfUIAzEXGXr37CPk&amp;_nc_zt=23&amp;_nc_ht=scontent-hou1-1.cdninstagram.com&amp;_nc_gid=_mc4bN83K5wJ1iQkjKDvuw&amp;_nc_ss=7ca8c&amp;oh=00_AQBZay9DA9CxY7zPtYCr8YfZPTNYhMJJrscvAOQQYbgifg&amp;oe=6A5A77C5" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">July Trends, Week 2 🔥 and our templates that help you jump on these in minutes 😎⁠ ⁠ 👀 9 Squares Reve</span>
+                <span class="w-meta">♥ 1 599 · 💬 1 576   · Sidecar</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DaiT9GyjoUs/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/741082436_18404901832154859_6412012417155669933_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=108&amp;ig_cache_key=MzkzNjc5NjUzNTMxMTU0Mzg0OQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=xSm213Wr9_EQ7kNvwEMg_QI&amp;_nc_oc=Adr-W-16YFx6KyBSDhWfo-VvcIX4oVuUmXKpbAM0pukmVCMyEy8IibwRVqY4hgf2zvw&amp;_nc_zt=23&amp;_nc_ht=scontent-sjc6-1.cdninstagram.com&amp;_nc_gid=-8xgzQt7a_K6UeHZCi4gig&amp;_nc_ss=72a8c&amp;oh=00_AQAU8BvQvRhJUd_IekPSAbwvb1kQJT49I1mV92-FH5h7kw&amp;oe=6A5AA218" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Don’t know what to post today? Grab this template inside this week’s Trend Drops✨, customize and be </span>
+                <span class="w-meta">♥ 102 · 💬 74   · Sidecar</span>
+              </span></a></div>
+        </div><div class="w-acc">
+          <a class="w-handle" href="https://www.instagram.com/friday_marketing_/" target="_blank" rel="noopener">@friday_marketing_</a>
+          <div class="w-posts"><a class="w-post" href="https://www.instagram.com/p/DaTGUJwjUza/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-lga3-2.cdninstagram.com/v/t51.82787-15/732517547_18020691488896497_710277693153716150_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ig_cache_key=MzkzMjUxNDU0MjE4NTk1MjA5OQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTg1Ni5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=OnBpU_NAJvIQ7kNvwHQj-bb&amp;_nc_oc=Adot2_ncwlHzSpy2mOlI-KTYBAp2VsjWD4L7ufBVzuB6wjpL9Tzx_7jhJePbMpyxukM&amp;_nc_zt=23&amp;_nc_ht=scontent-lga3-2.cdninstagram.com&amp;_nc_gid=aKwd5DeY-kvctHXGjY713w&amp;_nc_ss=72689&amp;oh=00_AQANk3wJUj6ZqzWr9hFC5uJ-KRpuao_Q-0ZK68i5fJY-Sw&amp;oe=6A5A7D29" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Some things just need to be said. The message on the flag captured it perfectly: “When the power of </span>
+                <span class="w-meta">♥ 1 204 · 💬 20   · Sidecar</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DQNYsp8koRN/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/569067754_17989698419896497_4589383462243457855_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=111&amp;ig_cache_key=Mzc1MDc2MjY3MjExMjcwMzM4NA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=aWiWAqGXQssQ7kNvwHvBhSx&amp;_nc_oc=AdrZ8pd0KAy1S9ONjtMOreyPtGKrrWI0q8JpDRrVeFjtul_75nTFoNtJkVO-3wmRzng&amp;_nc_zt=23&amp;_nc_ht=scontent-lga3-1.cdninstagram.com&amp;_nc_gid=buAmC9ARaaVfaRAgFuDPTw&amp;_nc_ss=72a8c&amp;oh=00_AQBnDowAs4-NC0v5SxlnToBv3Uwr06WfK8EY6nFwHBtbHQ&amp;oe=6A5A8106" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">BIG NEWS — we’re officially a Google Partner Agency! This isn’t just another badge — it means our te</span>
+                <span class="w-meta">♥ 142 · 💬 9   · Sidecar</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/Daojiz4p2Zc/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/744333129_18021971486896497_6131565560155684348_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-lga3-1.cdninstagram.com&amp;_nc_cat=109&amp;_nc_oc=Q6cZ2gF0faYqxHRx7Bg9Pbd6rDzDkTn-d5gNDRCfgxjrwXoMKCPKU-ZVGZ8DtNRQdgEb0-4&amp;_nc_ohc=Ft0FrcN6k5QQ7kNvwEAd4Vo&amp;_nc_gid=-8ogNH-3JrxUu5ROmrp5xA&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQAb6oEATrpb_hgze1Ohkq3K9pYf8AsP9I_ALoB1MysTEQ&amp;oe=6A5A88AF&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Not every post needs to follow a trend🌀 But when the RIGHT TREND fits your brand, being agile makes </span>
+                <span class="w-meta">♥ 62 · 💬 4 <span class="dim">▶ 4 803</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DME2No2MsHn/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/519502146_17977537793896497_1520279481667346874_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ig_cache_key=MzY3NjMwMTYyMTcwOTc1NzMyNg%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=JOv3y28YLgkQ7kNvwErgrTr&amp;_nc_oc=Adpv-tGgr_f9ZmoQT2xbtSkJFYvCsPD_RUgi4fExX6s0P7u2O7NzjqJnh4hEEl4j8SQ&amp;_nc_zt=23&amp;_nc_ht=scontent-sjc6-1.cdninstagram.com&amp;_nc_gid=kd0AyFzUemYEAtrgo8Cs8A&amp;_nc_ss=72a8c&amp;oh=00_AQDM57_z-jyc8Ta_xpp3Xv2MzmEdD-DecTpVFiwai8D0ag&amp;oe=6A5A9D18" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Guess what happens when you call our marketing line 📞 Stay tuned — our Marketing Girlie is about to </span>
+                <span class="w-meta">♥ 62 · 💬 8   · Sidecar</span>
+              </span></a></div>
+        </div><div class="w-acc">
+          <a class="w-handle" href="https://www.instagram.com/mycreatorapp/" target="_blank" rel="noopener">@mycreatorapp</a>
+          <div class="w-posts"><a class="w-post" href="https://www.instagram.com/p/DalGxzcKOV7/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-mia5-1.cdninstagram.com/v/t51.71878-15/740663423_1558365959065117_94848210868890756_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-mia5-1.cdninstagram.com&amp;_nc_cat=101&amp;_nc_oc=Q6cZ2gE_mFeECiGvEA3Sll8_HyhfEKcgiUC05NHfsG6V_zdDleFO1xT2Aw4kbb7UbkMHWtg&amp;_nc_ohc=eCTEmiir5wMQ7kNvwELjvSr&amp;_nc_gid=6GhqYW2ILCp3p9oox7CGaw&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQAY9UHOE912n_4Ksqh3Knen1O0JKkjAt1Ihmfenp8GBMA&amp;oe=6A5A842D&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Download the app first Susan… 👀 #mycreatorapp #appforcreators #contentcreator #contentcreation #mycr</span>
+                <span class="w-meta">♥ 324 · 💬 3 <span class="dim">▶ 19 634</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DaXmP5qqesY/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-15/722447481_17900568567466535_8422170995324870441_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-hou1-1.cdninstagram.com&amp;_nc_cat=111&amp;_nc_oc=Q6cZ2gEcO86awM52e4nJ5faz0XNBFBz0ktGoLCHYV-lkO8DEK7mBY1KGuxEuBa2bmUGpYnw&amp;_nc_ohc=dwS_7adCpPoQ7kNvwG0yCf3&amp;_nc_gid=wSzMDO1xWYjkrB7XugXlbQ&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQAq4l-06VckrxyGVhkKL_hGojEtekfWZGvy0Uy8aPEVYw&amp;oe=6A5AA185&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">We do NOT mind if you steal our fav font combo 😎 #mycreatorapp #contentcreator #contentcreation #myc</span>
+                <span class="w-meta">♥ 51 · 💬 0 <span class="dim">▶ 995</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DaaYminqNAZ/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-ord5-1.cdninstagram.com/v/t51.82787-15/731787374_17900730075466535_2609428485210473635_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-ord5-1.cdninstagram.com&amp;_nc_cat=111&amp;_nc_oc=Q6cZ2gHX5OVru1AKlU6oAVA9z8ClOukosB8IcA2kkVEVmK7JcCbX5XFFRvHgh7z68Vs0TuU&amp;_nc_ohc=UPZme_2m8YMQ7kNvwEzrWh8&amp;_nc_gid=7bkCbN4T2bpnyh-oGi2Qeg&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQACOxjkiB_FF0SXb_WvTIwJX2oOT6aRaWZfGBAzNZINrA&amp;oe=6A5A9959&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">TRANSITIONS are a huge part of a creative and interactive content! Especially if you are a beginner,</span>
+                <span class="w-meta">♥ 46 · 💬 0 <span class="dim">▶ 1 138</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DaXXDaIqVRO/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://instagram.fhio2-1.fna.fbcdn.net/v/t51.82787-15/733505514_17900555817466535_258994306646397053_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=instagram.fhio2-1.fna.fbcdn.net&amp;_nc_cat=111&amp;_nc_oc=Q6cZ2gFdetdzg78uXW45k4inFWeBCB4IFBte-kjdey6dFG74ZHEP77uBewU1tSezYCadof0&amp;_nc_ohc=nhfzoKA0w_oQ7kNvwFeaGin&amp;_nc_gid=iXI_hCWWxFlKv5uWRoriAg&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQD5ixtOcbBGHMEBGjo9s_4UKV77b9FF0VLOJHayXwriBw&amp;oe=6A5AA4DC&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">We’ve said what we’ve said 👀😎 #mycreatorapp #contentcreator #editingapp #appforcreators</span>
+                <span class="w-meta">♥ 19 · 💬 0   · Image</span>
+              </span></a></div>
+        </div><div class="w-acc">
+          <a class="w-handle" href="https://www.instagram.com/bukhashbrothers/" target="_blank" rel="noopener">@bukhashbrothers</a>
+          <div class="w-posts"><a class="w-post" href="https://www.instagram.com/p/DL2aOtSyTb3/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/517594567_18530478481000681_5072317705618685698_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&amp;_nc_ht=scontent-atl3-2.cdninstagram.com&amp;_nc_cat=101&amp;_nc_oc=Q6cZ2gG_5fHhqjDDR5Y8RtqOEplJVCFkHEa8MP3TDgJ3e9coPgCZx5X5ty8angI54ARh-1g&amp;_nc_ohc=Qy_nxA_Xd_MQ7kNvwFkx5ti&amp;_nc_gid=AajzpO1i4C8dSshBWdxtkA&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQAnvOsSZRWDtWQpQjAioB8SBeeOQwH2q963fSN304GNAg&amp;oe=6A5A9587&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">This is what we mean when we say “full-service” ⭐️ At Bukhash Brothers, we’re your creative partner,</span>
+                <span class="w-meta">♥ 278 · 💬 30 <span class="dim">▶ 14 287</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DI8tXRkSFKh/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/624703867_25820472524277911_6721958623608246560_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_cat=100&amp;ig_cache_key=MzYxOTk2NjU3Mjg2Mjk2MTc3Nw%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%3D&amp;_nc_ohc=9ScK62X5kDEQ7kNvwGlyyih&amp;_nc_oc=AdrrEI4v5lMLMggpbVYP7BdF5cmsTzfUMkbqr7CNR54r5ImsyASsriXVFSTpyfLK-nU&amp;_nc_zt=23&amp;_nc_ht=scontent-iad6-1.cdninstagram.com&amp;_nc_gid=GxFW7s8BQcnPib6nnApOaA&amp;_nc_ss=72689&amp;oh=00_AQAKCdJg1mcd0HBx4Z1xjWqEj_bKRnGckLHQn2SR8ypXGA&amp;oe=6A5A7B1D" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Spotlighting the bold ideas that earned us Most Innovative Marketing Agency of the Year at the MENA </span>
+                <span class="w-meta">♥ 145 · 💬 14   · Sidecar</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/Dap4G0ApAtm/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/743632848_18623176072000681_8400769682010834688_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;_nc_cat=101&amp;_nc_oc=Q6cZ2gHWpq6CoGedqpMCRiygy3_8lm47wUw9cJFwMMfLwYmBdzAlLJYEkp-HAiAR9m0Gyz4&amp;_nc_ohc=0LnOn7SfXEgQ7kNvwGe_Ce8&amp;_nc_gid=Du4H71k7NEbnyFmZk2ZAdg&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQC_VxpDKUAHWkfUdPBvwXrLvNXwVPHpxM5BiUf4velRtA&amp;oe=6A5A74F0&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">A little inside scoop. 👀 Here are some of our go-to hooks and transitions that we love using. Save t</span>
+                <span class="w-meta">♥ 61 · 💬 6 <span class="dim">▶ 2 148</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DakxMrXMzUm/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/741592336_18622901866000681_7784418303882377200_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-atl3-2.cdninstagram.com&amp;_nc_cat=101&amp;_nc_oc=Q6cZ2gFgl1E65O91Q09tOhO7z8ofVYyVKt2l6beEItNSaPHXE9A_7UFZzsoSrrCTpisL6kI&amp;_nc_ohc=91ngsbLOzUMQ7kNvwF1KWhO&amp;_nc_gid=ALGt88jJRwtzMPWoa272IQ&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQBN7Cra4wnOgI4hK4Ez4UY5b73EfF41w5Qx-gFwfBZG-Q&amp;oe=6A5AA5AA&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">You’ve probably seen Dubai-It everywhere, here’s what it means and what the team thinks! Comment dow</span>
+                <span class="w-meta">♥ 45 · 💬 0 <span class="dim">▶ 2 126</span>  · Video</span>
+              </span></a></div>
+        </div><div class="w-acc">
+          <a class="w-handle" href="https://www.instagram.com/kartiadesigns/" target="_blank" rel="noopener">@kartiadesigns</a>
+          <div class="w-posts"><a class="w-post" href="https://www.instagram.com/p/DakN-Eahm2A/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/730941151_18401225902083397_4708837278896254042_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-atl3-2.cdninstagram.com&amp;_nc_cat=101&amp;_nc_oc=Q6cZ2gFrA2pGUFH1Up-Bn7_rtGaGt7VY6ittl00dJrNrt267dmNjcKxx0CNDV1Nq_zCAt8I&amp;_nc_ohc=N70iMx2vjBIQ7kNvwEtquoV&amp;_nc_gid=sIx_gU614k7GPZETh1XyGQ&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQDQEzKnRivvGLAog_9TEYroUqAIv5kdK-xdznrAaJrW7g&amp;oe=6A5A8BA5&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Five things nobody tells you about working with a designer… some of these might annoy you. 1. People</span>
+                <span class="w-meta">♥ 21 · 💬 0 <span class="dim">▶ 312</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DOrT6bLknN-/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-phl2-1.cdninstagram.com/v/t51.82787-15/548902213_18357475750083397_2273907364027370011_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&amp;_nc_ht=scontent-phl2-1.cdninstagram.com&amp;_nc_cat=101&amp;_nc_oc=Q6cZ2gEOkwagps_xwN5_tmpgl6AIxRXhnPYNkb7P_rpcy_Vzq1VuN54h1DI6X8hKGx8u1kY&amp;_nc_ohc=En2cpxU7jOYQ7kNvwG9iCbo&amp;_nc_gid=IcTtkObhhLv09FCYI2PlwA&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQDeeY2jDEdbDJtN9ZA8-crRKMMHvotL1vKY7P48RRcr9g&amp;oe=6A5A8A9F&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Awww shucks Trace! ☺️ Who doesn’t love a review like this! This one is a goodie, that we can’t wait </span>
+                <span class="w-meta">♥ 14 · 💬 1   · Image</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DN5MsfnZmmn/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-lga3-2.cdninstagram.com/v/t51.82787-15/538393732_18355158424083397_8699794190067019290_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&amp;_nc_ht=scontent-lga3-2.cdninstagram.com&amp;_nc_cat=101&amp;_nc_oc=Q6cZ2gE4zc3u-uz_H5LXoec6CSBgcK9yOuxT6WoTaKl4KYfIv4t0GIDhFFe8d76VWNk_OyY&amp;_nc_ohc=-x5UpZTNagQQ7kNvwFhbIJu&amp;_nc_gid=lGMihrWTarCaqc_zSbEC3w&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQBT9x9nNYJXmrhOdR6pr6uRKAuIAxhJF0OYa74mo2VePA&amp;oe=6A5A81D6&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Sponsored content in wild 🐅 Love when you’re casually scrolling and then 💥 “whomp there it is!” @neu</span>
+                <span class="w-meta">♥ 13 · 💬 0 <span class="dim">▶ 400</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DUxgrexD8IA/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://instagram.fpia1-1.fna.fbcdn.net/v/t51.82787-15/636868819_18381215050083397_2309706037102735565_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&amp;_nc_ht=instagram.fpia1-1.fna.fbcdn.net&amp;_nc_cat=101&amp;_nc_oc=Q6cZ2gG5F0s7o9exegN9hRkDm5VxHSlsV_Drfpk0Jc4ylJuGD0UcothmmIZ7ZEnHeJGOu6E&amp;_nc_ohc=v_b4AV663WcQ7kNvwFp31GR&amp;_nc_gid=VeREEy57mGU2SsUNzj3UtQ&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQDXK3m29OgQ8QdZNjcPhD865Ev6JQ0PFs0K4GRLP14Txg&amp;oe=6A5A9B28&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">More than just an agency. We are your competitive edge in business.</span>
+                <span class="w-meta">♥ 12 · 💬 0 <span class="dim">▶ 594</span>  · Video</span>
+              </span></a></div>
+        </div><div class="w-acc">
+          <a class="w-handle" href="https://www.instagram.com/yourtemplateclub/" target="_blank" rel="noopener">@yourtemplateclub</a>
+          <div class="w-posts"><a class="w-post" href="https://www.instagram.com/p/DakrXiPu7t5/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-ord5-3.cdninstagram.com/v/t51.71878-15/742760952_1019997657290856_1907911955224808170_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-ord5-3.cdninstagram.com&amp;_nc_cat=100&amp;_nc_oc=Q6cZ2gFUANUWCfMuIMDuMDqZgZ-V7aPisnuB1IvlAAXWR9EHsima1Hu4i9ereqn64JP6unU&amp;_nc_ohc=Sb409t7POqkQ7kNvwEhhuxZ&amp;_nc_gid=mPWTHH3Ixam-qkbxcZCZwA&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQAgIOCvHCd5pNYfj74Y7PnvVD1a0IiJxkRZDpAHI3bimg&amp;oe=6A5A8EAE&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">If you have ever gone to share a single picture and somehow gotten guilted into filming a whole prod</span>
+                <span class="w-meta">♥ 13 · 💬 0 <span class="dim">▶ 1 056</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DafjVlZO7V8/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-det1-1.cdninstagram.com/v/t51.82787-15/732875429_18114357395496808_2122250945428757830_n.jpg?stp=dst-jpg_e15_tt6&amp;_nc_ht=scontent-det1-1.cdninstagram.com&amp;_nc_cat=104&amp;_nc_oc=Q6cZ2gFcMZZTTcedNYASqgh-AcWHOyrerb7UlmpBGQAF3D5Fd8DJt6YrZHUIEas4NXMwtWA&amp;_nc_ohc=PfwUVcjIiikQ7kNvwFFJGat&amp;_nc_gid=A_L0YeU6NXUEGSP8SaOmHw&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQCN_426H35n-7Mr1UuFWYqO-j5MdlxwQWRRl0wuMGGSwA&amp;oe=6A5A7D77&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">This is the post format that gets saved every single time. 👀⁠ ⁠ “Forget all you heard about [your to</span>
+                <span class="w-meta">♥ 11 · 💬 4 <span class="dim">▶ 679</span>  · Video</span>
+              </span></a><a class="w-post" href="https://www.instagram.com/p/DanP49ln-bO/" target="_blank" rel="noopener">
+              <span class="thumb w-thumb" style="--tile:linear-gradient(135deg,#833AB4,#FD1D1D,#FCB045)">
+                <span class="glyph-mono">IG</span><img class="thumb-img" src="https://scontent-atl3-2.cdninstagram.com/v/t51.82787-15/741751520_18114789761496808_1569799920415175996_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&amp;_nc_ht=scontent-atl3-2.cdninstagram.com&amp;_nc_cat=104&amp;_nc_oc=Q6cZ2gGzz52HcBR2wMQK9mkSLc5kqI7mLVTUjoEfEqsR_AHPMkvTcC21T_3d4PM5aok9F50&amp;_nc_ohc=1IT6wx7K35YQ7kNvwHoKOhG&amp;_nc_gid=MfoQLXdjEq7YItssBcIKUg&amp;edm=ADp7STQBAAAA&amp;ccb=7-5&amp;oh=00_AQBdmKoTxM6YtsysVO270aSSAd2tb5bdVlrS_uIVQBtULQ&amp;oe=6A5A7663&amp;_nc_sid=c6f216" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>
+              <span class="w-body">
+                <span class="w-cap">Things keeping me afloat right now...⁠ ⁠ The group chat. Eight hours of sleep when I can get it. A f</span>
+                <span class="w-meta">♥ 7 · 💬 0   · Image</span>
+              </span></a></div>
+        </div></div></section>
+    </main>
+    <footer>
+      <p>Vygenerováno 2026-07-13 v 13:12 · StudyFi trend scraper. Plný markdown a CSV v <code>out/</code>.</p>
+    </footer></body>
+</html>
