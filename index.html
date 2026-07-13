@@ -163,6 +163,26 @@ tbody tr:hover{background:var(--accent-soft)}
 .src-tag{font-family:var(--mono); font-size:11px; background:var(--chip-bg); padding:1px 6px;
   border-radius:4px; color:var(--ink-soft)}
 
+/* Co natočit — konkrétní posty (Claude) */
+.posts{display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.post{background:var(--card); border:1px solid var(--line); border-top:3px solid var(--cat);
+  border-radius:var(--radius); padding:15px 16px; display:flex; flex-direction:column; gap:9px}
+.post-head{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+.post-cat{font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.06em;
+  color:#fff; background:var(--cat); padding:2px 8px; border-radius:20px}
+.post-title{font-size:14px; font-weight:750; color:var(--ink)}
+.post-hook{margin:0; font-size:15px; font-weight:650; line-height:1.35; color:var(--ink)}
+.post-shots{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:3px;
+  font-size:13px; color:var(--ink-soft)}
+.post-shots li{padding-left:2px}
+.post-cap{margin:0; font-size:13px; color:var(--ink-soft); line-height:1.4}
+.post-tags{display:flex; flex-wrap:wrap; gap:5px}
+.ptag{font-size:11px; color:var(--accent); background:var(--accent-soft); padding:1px 7px;
+  border-radius:20px; font-weight:500}
+.post-foot{display:flex; flex-wrap:wrap; gap:6px 12px; font-size:12px; color:var(--dim);
+  border-top:1px solid var(--line); padding-top:9px; margin-top:2px}
+.p-sound{color:var(--ink-soft); font-weight:600}
+
 /* sledované účty (watch) */
 .watch-grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
 .w-acc{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px}
@@ -203,6 +223,87 @@ footer p{margin:0}
     <main>
       <div class="tldr"><span class="tldr-label">Dnešní tah</span><p>Klid v kalendáři. Nejsilnější dnešní úhel: <strong>PAIN / relatable</strong> (#1 níž). Jinak: natoč zásobu evergreenů na zkouškové.</p></div>
       <section class="cal"><h2>⏰ Kalendář</h2><p class="quiet">Žádná událost na obzoru — klidné období. Ideální čas natočit zásobu obsahu na další vlnu.</p></section>
+      <section><h2>🎯 Co natočit — konkrétní posty</h2><p class="sub">Napsáno Claudem na míru dnešním trendům a zvukům. Vezmi a natoč — hook, záběry, caption, zvuk.</p><div class="posts"><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Zeigarnik efekt proti prokrastinaci</span>
+          </div>
+          <p class="post-hook">🎬 tvůj mozek nesnáší nedokončené věci</p>
+          <ol class="post-shots"><li>Ty s otevřeným sešitem a 5 rozjetými úkoly najednou, zoom na chaos</li><li>Text na obrazovce: &#x27;nedokončená věc = mozek na tebe furt myslí (Zeigarnik effect)&#x27;</li><li>Otevřeš StudyFi, rozsekáš úkol na mini kroky, odškrtáváš jeden po druhém, klid v očích</li></ol>
+          <p class="post-cap">✍️ Proč nemůžeš vypnout mozek, i když už zavřeš učebnici – a jak s tím pracovat, ne proti tomu</p>
+          <div class="post-tags"><span class="ptag">#studytok</span><span class="ptag">#zeigarnikeffect</span><span class="ptag">#prokrastinace</span><span class="ptag">#studygram</span><span class="ptag">#cestina</span></div>
+          <div class="post-foot"><span class="p-sound">🎵 original sound</span><span class="p-why">💡 Vysoce relevantní psychologický trend (rel 9.07) s jasným &#x27;aha&#x27; momentem, co se dá vizuálně ukázat přes rozsekání úkolů v appce</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Bušení srdce před učením</span>
+          </div>
+          <p class="post-hook">🎬 srdce ti bije jak před zkouškou, a ještě jsi ani nezačal</p>
+          <ol class="post-shots"><li>Detail na ruku třesoucí se nad učebnicí, dech nahoru</li><li>Text: &#x27;tvoje tělo si myslí, že tě honí tygr. ne testy z biologie.&#x27;</li><li>Klidný záběr: telefon, StudyFi rozloží učení na 10minutové bloky, ty dýcháš pomaleji</li></ol>
+          <p class="post-cap">✍️ Není to lenost, je to nervová soustava v permanentním poplachu – tady je jak z toho ven</p>
+          <div class="post-tags"><span class="ptag">#studyanxiety</span><span class="ptag">#testovanistrach</span><span class="ptag">#studytok</span><span class="ptag">#dusevnizdravi</span><span class="ptag">#studenti</span></div>
+          <div class="post-foot"><span class="p-sound">🎵 original sound</span><span class="p-why">💡 Reaguje na velmi konkrétní a emočně silnou bolest (úzkost/palpitace), soucitný tón bez zlehčování buduje důvěru</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Rychlé tipy na zkoušky</span>
+          </div>
+          <p class="post-hook">🎬 3 věci, co bys měl dělat týden před zkouškou</p>
+          <ol class="post-shots"><li>Rychlý střih: kalendář s odškrtanými dny, timer na telefonu</li><li>Ty píšeš shrnutí rukou vs. AI shrnutí ve StudyFi vedle sebe</li><li>Poslední záběr: usínáš v rozumnou hodinu, budík na 7 hodin spánku</li></ol>
+          <p class="post-cap">✍️ Zapomeň na noční maraton, tohle je plán, co skutečně funguje</p>
+          <div class="post-tags"><span class="ptag">#examtips</span><span class="ptag">#studytok</span><span class="ptag">#jaksestriprava</span><span class="ptag">#studenti</span><span class="ptag">#stredoskola</span></div>
+          <div class="post-foot"><span class="p-sound">🎵 original sound</span><span class="p-why">💡 Přímá odpověď na trending otázku &#x27;study tips for exams&#x27;, formát rychlých tipů má vysokou watch-through rate</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Dva roky do maturity</span>
+          </div>
+          <p class="post-hook">🎬 když víš, že tě čekají 2 roky těžkých zkoušek</p>
+          <ol class="post-shots"><li>Ty sedíš, díváš se na maturitní kalendář, dlouhý výdech</li><li>Text: &#x27;nemusíš to vyřešit dneska. jen dnešní den.&#x27;</li><li>StudyFi rozplánuje dlouhodobý cíl na týdenní kroky, ty zavíráš telefon v klidu</li></ol>
+          <p class="post-cap">✍️ Velký cíl je míň děsivý, když ho nikdy nevidíš celý najednou</p>
+          <div class="post-tags"><span class="ptag">#maturita</span><span class="ptag">#studyplan</span><span class="ptag">#dlouhodobapripravа</span><span class="ptag">#studytok</span><span class="ptag">#klid</span></div>
+          <div class="post-foot"><span class="p-sound">🎵 original sound</span><span class="p-why">💡 Cílovka řeší úzkost z dlouhodobého horizontu, klidný tón sedí k &#x27;přípravné&#x27; fázi bez tlaku</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Když nemůžeš pokračovat po čase</span>
+          </div>
+          <p class="post-hook">🎬 nastavil jsi si 2 hodiny učení a po 20 minutách je konec</p>
+          <ol class="post-shots"><li>Timer na 2h, ty za 20 min zíráš do zdi</li><li>Text: &#x27;možná neproblém je disciplína. problém je špatně nastavený blok.&#x27;</li><li>StudyFi navrhne kratší bloky s pauzami, ty reálně dojedeš celou session</li></ol>
+          <p class="post-cap">✍️ Není to o tom mít víc vůle, je to o tom mít lepší rozvrh</p>
+          <div class="post-tags"><span class="ptag">#focustok</span><span class="ptag">#studyhabits</span><span class="ptag">#studytok</span><span class="ptag">#produktivita</span><span class="ptag">#studenti</span></div>
+          <div class="post-foot"><span class="p-sound">🎵 original sound</span><span class="p-why">💡 Reaguje na konkrétní frustraci z Redditu, řešení je vizuálně jasné a nekřičí &#x27;kup appku&#x27;, ale ukazuje úlevu</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Špatné studijní návyky</span>
+          </div>
+          <p class="post-hook">🎬 tvoje studijní návyky nejsou špatné, jsou nikdy naučené</p>
+          <ol class="post-shots"><li>Montáž: učení s telefonem v ruce, 5 otevřených tabů, poznámky nikde nenavazují</li><li>Text: &#x27;AI ti nezopíruje úkol. pomůže ti pochopit, kde se ztrácíš.&#x27;</li><li>StudyFi ukazuje, kde přeskakuješ látku, ty se vracíš a doplňuješ mezery</li></ol>
+          <p class="post-cap">✍️ Nikdo tě nenaučil studovat, tak proč se za to trestat</p>
+          <div class="post-tags"><span class="ptag">#studyhabits</span><span class="ptag">#ucenidoma</span><span class="ptag">#studytok</span><span class="ptag">#stredoskolaci</span><span class="ptag">#AIvestudiu</span></div>
+          <div class="post-foot"><span class="p-sound">🎵 original sound</span><span class="p-why">💡 Přímo cílí na trending otázku o návycích a jasně komunikuje AI-cheating pravidlo bez korporátní fráze</span></div>
+        </article><article class="post" style="--cat:#f0913a">
+          <div class="post-head">
+            <span class="post-cat">Moment</span>
+            <span class="post-title">Raketa přistává, ty ne</span>
+          </div>
+          <p class="post-hook">🎬 japonská raketa se umí sama vrátit, tvůj mozek po škole ne</p>
+          <ol class="post-shots"><li>Klip rakety hovering/landing z videa</li><li>Text: &#x27;perfektní landing. tvoje soustředění po 6 hodinách školy? ne tak úplně.&#x27;</li><li>StudyFi ti pomůže &#x27;přistát&#x27; zpátky do učení přes krátký restart session</li></ol>
+          <p class="post-cap">✍️ I raketa potřebuje plán na přistání, ty na návrat k učení taky</p>
+          <div class="post-tags"><span class="ptag">#studytok</span><span class="ptag">#damnthatsinteresting</span><span class="ptag">#focusreset</span><span class="ptag">#studenti</span><span class="ptag">#vedafun</span></div>
+          <div class="post-foot"><span class="p-sound">🎵 original sound</span><span class="p-why">💡 Virální vizuál z r/Damnthatsinteresting s lehkým, vtipným můstkem k tématu soustředění, ne násilně natažené</span></div>
+        </article><article class="post" style="--cat:#f0913a">
+          <div class="post-head">
+            <span class="post-cat">Moment</span>
+            <span class="post-title">Kaluž jako rendering</span>
+          </div>
+          <p class="post-hook">🎬 tahle kaluž vypadá jak z počítačové hry</p>
+          <ol class="post-shots"><li>Klip kaluže bublající jako rendering</li><li>Text: &#x27;tvoje poznámky taky vypadají jak glitch po 3 hodinách zápisu bez systému&#x27;</li><li>StudyFi přehledně srovná poznámky do struktury, žádný chaos</li></ol>
+          <p class="post-cap">✍️ Někdy věci vypadají jak bug, dokud nedostanou strukturu</p>
+          <div class="post-tags"><span class="ptag">#damnthatsinteresting</span><span class="ptag">#studytok</span><span class="ptag">#notesorganized</span><span class="ptag">#studenti</span><span class="ptag">#chaostoclarity</span></div>
+          <div class="post-foot"><span class="p-sound">🎵 original sound</span><span class="p-why">💡 Hravé využití trendujícího hypnotického videa jako metafory pro chaotické poznámky, nízký nátlak, vysoká sdílitelnost</span></div>
+        </article></div></section>
       <section><h2>🎵 Trending zvuky</h2>
       <p class="sub">Zvuk je na TikToku větší páka než hook. Berte shora — <code>original</code> roste i umírá rychleji.</p>
       <div class="table-wrap"><table>
@@ -574,6 +675,6 @@ footer p{margin:0}
         </div></div></section>
     </main>
     <footer>
-      <p>Vygenerováno 2026-07-13 v 13:12 · StudyFi trend scraper. Plný markdown a CSV v <code>out/</code>.</p>
+      <p>Vygenerováno 2026-07-13 v 14:33 · StudyFi trend scraper. Plný markdown a CSV v <code>out/</code>.</p>
     </footer></body>
 </html>
