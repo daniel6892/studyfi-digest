@@ -103,6 +103,18 @@ h2{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.06
 .chip.cat{color:#fff;background:var(--accent)}
 .chip.src{font-family:var(--mono);font-weight:500}
 .chip.fyi{color:var(--heat-2);background:color-mix(in srgb,var(--heat-2) 14%,transparent)}
+.chip.t-direct{color:#12915a;background:color-mix(in srgb,#12b76a 14%,transparent)}
+.chip.t-meme{color:var(--accent);background:var(--accent-soft)}
+.chip.t-careful{color:var(--heat-2);background:color-mix(in srgb,var(--heat-2) 14%,transparent)}
+
+/* přepínací filtry */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.fbtn{font:inherit;font-size:13px;font-weight:600;color:var(--ink-soft);
+  background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:6px 14px;cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.fbtn:hover{border-color:var(--accent)}
+.fbtn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rwrap{scroll-margin-top:12px}
 .def{display:grid;grid-template-columns:92px 1fr;gap:6px 14px;font-size:13.5px}
 .def dt{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);font-weight:700;padding-top:3px}
 .def dd{margin:0;color:var(--ink-soft);line-height:1.5}
@@ -288,33 +300,12 @@ footer p{margin:0}
       </div>
       <div class="head-meta">
         <span class="date">2026-07-15</span>
-        <span><strong>11</strong> celosvětových · <strong>6</strong> CZ/SK</span>
-        <span><strong>11</strong> hýbou napříč zdroji</span>
+        <span><strong>5</strong> celosvětových · <strong>4</strong> trhů</span>
       </div>
     </header>
     <main>
-      <div class="slabel"><h2>Makrotrendy</h2><span class="count">co se dá chytit a předělat</span></div><p class="sdesc">Co se teď šíří po sítích — vybrané jen hijackovatelné momenty. U každého: jak to hrají značky a tvůrci, a hlavně <b>StudyFi úhel</b> = jak to remaknout k obrazu svému.</p><div class="rgroup"><span class="rflag">🌍 Celosvětové</span><span class="count">virální momenty</span></div><div class="radar"><article class="trend">
+      <div class="slabel"><h2>Makrotrendy</h2><span class="count">co se dá chytit a předělat</span></div><p class="sdesc">Co se teď šíří po sítích — vybrané hijackovatelné momenty. U každého <b>StudyFi úhel</b> = jak to remaknout (u citlivých aspoň meme/parodie). Přepínej filtry.</p><div class="filters"><button class="fbtn active" data-f="all">Vše</button><button class="fbtn" data-f="world">🌍 Svět</button><button class="fbtn" data-f="cz">🇨🇿 CZ</button><button class="fbtn" data-f="sk">🇸🇰 SK</button><button class="fbtn" data-f="de">🇩🇪 DE / DACH</button><button class="fbtn" data-f="latam">🌎 LATAM</button></div><div class="rwrap" data-region="world"><div class="rgroup"><span class="rflag">🌍 Celosvětové</span><span class="count">virální momenty</span></div><div class="radar"><article class="trend">
           <div class="rank">1</div>
-          <div class="tbody">
-            <div class="head-row">
-              <p class="headline"><a href="https://www.reddit.com/r/gaming/comments/1uw9jpp/microsoft_deletes_users_25_year_old_account_with/" target="_blank" rel="noopener">Microsoft Deletes Users 25 Year Old Account With Thousands Spent On Games And His Sons Baby Pictures After It Was Hacked</a></p>
-              <div class="reach">
-                <div class="rnum">18</div><div class="rlbl">dosah</div>
-                <div class="bar"><span style="width:18%;background:var(--heat-3)"></span></div>
-              </div>
-            </div>
-            <div class="chips">
-              <span class="chip cat">Digital / strach</span>
-              <span class="chip src">reddit · zdrojů 2</span>
-            </div>
-            <dl class="def">
-              <dt>Co to je</dt><dd>Microsoft smazal chlapovi 25 let starý účet i se vzpomínkami na syna poté, co mu ho hackli.</dd>
-              <dt>Jak to hrají</dt><dd><b>Značky:</b> Cloud a tech firmy to hrají jako varovnou kampaň typu &#x27;zálohuj si svůj život, než bude pozdě&#x27;. <b>Tvůrci:</b> Tvůrci dělají rant/reaction videa typu &#x27;POV: ztratil jsi roky práce kvůli jednomu emailu&#x27;.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi">StudyFi jede na tom, že poznámky v hlavě nebo na útržcích papíru zmizí stejně rychle jako ten účet — proto je má mít člověk zálohovaný na jednom místě.</dd>
-            </dl>
-          </div>
-        </article><article class="trend">
-          <div class="rank">2</div>
           <div class="tbody">
             <div class="head-row">
               <p class="headline"><a href="https://www.reddit.com/r/NonPoliticalTwitter/comments/1uw85yz/stanley_your_time_is_up/" target="_blank" rel="noopener">Stanley your time is up</a></p>
@@ -324,17 +315,57 @@ footer p{margin:0}
               </div>
             </div>
             <div class="chips">
-              <span class="chip cat">Meme / hype</span>
+              <span class="chip cat">trend cycle meme</span>
               <span class="chip src">reddit · zdrojů 2</span>
             </div>
             <dl class="def">
-              <dt>Co to je</dt><dd>Internet vyhlašuje, že hype na Stanley kelímky skončil a hledá se nový &#x27;it&#x27; předmět generace.</dd>
-              <dt>Jak to hrají</dt><dd><b>Značky:</b> Lifestyle a merch značky rychle nabízí &#x27;nástupce&#x27; a hrají si na &#x27;RIP starý hype, welcome nový&#x27;. <b>Tvůrci:</b> Tvůrci dělají rychlé rankingy a edity typu &#x27;RIP Stanley, tohle je nový flex&#x27;.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi">StudyFi to otočí — zapomeň na kelímek, nový flex je mít hotový projekt dřív než spolužáci.</dd>
+              <dt>Co to je</dt><dd>Meta-komentář k tomu, že hype na Stanley kelímky skončil a internet už čeká na další must-have věc</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> Značky se předhánějí, kdo odhalí &#x27;další Stanley&#x27; a natáčí dramatické reveal videa nového produktu sezóny <b>Tvůrci:</b> Tvůrci dělají žebříčky &#x27;co bylo trendy vs. co je trendy teď&#x27; a ironizují rychlost hype cyklů</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Meme: &#x27;Stanley your time is up... teď je trend být ready na zkoušky bez chaosu&#x27; — StudyFi jako &#x27;nový must-have&#x27; sezóny místo kelímku</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.reddit.com/r/MadeMeSmile/comments/1uwt7kg/the_first_thing_she_does_every_morning/" target="_blank" rel="noopener">The first thing she does every morning🫶🏻</a></p>
+              <div class="reach">
+                <div class="rnum">18</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:18%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="chip cat">ranní rutina format</span>
+              <span class="chip src">reddit · zdrojů 2</span>
+            </div>
+            <dl class="def">
+              <dt>Co to je</dt><dd>Šablonový formát, kde lidi ukazují svůj první ranní rituál — skincare, káva, scrollování</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> Brands sponzorují &#x27;my morning routine&#x27; videa, kde je jejich produkt hero shotem hned na začátku <b>Tvůrci:</b> Influenceři točí estetické morning routine klipy se slow-mo a chill hudbou</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">StudyFi verze: &#x27;první věc, co udělám každé ráno&#x27; = mrknu do appky, co mě dneska čeká — žádný chaos, žádné &#x27;co jsem to měla za úkol&#x27;</dd>
             </dl>
           </div>
         </article><article class="trend">
           <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.reddit.com/r/gaming/comments/1uw9jpp/microsoft_deletes_users_25_year_old_account_with/" target="_blank" rel="noopener">Microsoft Deletes Users 25 Year Old Account With Thousands Spent On Games And His Sons Baby Pictures After It Was Hacked</a></p>
+              <div class="reach">
+                <div class="rnum">18</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:18%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="chip cat">tech horror story</span>
+              <span class="chip src">reddit · zdrojů 2</span>
+            </div>
+            <dl class="def">
+              <dt>Co to je</dt><dd>Příběh, jak big tech smaže roky starý účet i s cennými daty bez varování, jen kvůli hacku</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> Konkurenční cloud/storage služby to využívají jako reklamu na zálohování a bezpečí dat <b>Tvůrci:</b> Tech tvůrci dělají reakce a rozbory typu &#x27;zálohuj si všechno, než bude pozdě&#x27;</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Meme: &#x27;Microsoft ti smaže účet po 25 letech, StudyFi ti nesmaže poznámky den před zkouškou&#x27; — narážka na spolehlivost appky</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
           <div class="tbody">
             <div class="head-row">
               <p class="headline"><a href="https://www.reddit.com/r/interestingasfuck/comments/1uwasfb/autistic_boy_amazes_people_with_his_perfect/" target="_blank" rel="noopener">Autistic boy amazes people with his perfect imitation of birds</a></p>
@@ -344,17 +375,17 @@ footer p{margin:0}
               </div>
             </div>
             <div class="chips">
-              <span class="chip cat">Wow / talent</span>
+              <span class="chip cat">wholesome viral</span>
               <span class="chip src">reddit · zdrojů 2</span>
             </div>
             <dl class="def">
-              <dt>Co to je</dt><dd>Kluk s autismem dokonale napodobuje ptačí zvuky a internet nad tím žasne.</dd>
-              <dt>Jak to hrají</dt><dd><b>Značky:</b> Inkluzivní a vzdělávací značky to sdílí jako pozitivní story o unikátních schopnostech mozku. <b>Tvůrci:</b> Tvůrci dělají duety a reakce s titulkem &#x27;tohle mi zvedlo den&#x27;.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi">StudyFi úhel: každý mozek se učí jinak, i ten co umí ptáka může frajersky zvládnout matiku svým vlastním stylem.</dd>
+              <dt>Co to je</dt><dd>Dojemné video, kde kluk s autismem dokonale napodobuje ptačí zvuky a lidi z toho jsou nadšení</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> Brands to sdílí v rámci &#x27;inclusion&#x27; kampaní, spíš organicky bez tvrdého prodeje <b>Tvůrci:</b> Creators dělají reakční videa typu &#x27;tohle mi zachránilo den&#x27; s pozitivními komentáři</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Inspirace k tomu, že každý se učí jinak — StudyFi respektuje různé styly učení a pomáhá každému najít ten svůj</dd>
             </dl>
           </div>
         </article><article class="trend">
-          <div class="rank">4</div>
+          <div class="rank">5</div>
           <div class="tbody">
             <div class="head-row">
               <p class="headline"><a href="https://www.reddit.com/r/interestingasfuck/comments/1uwm700/52_years_ago_america_was_legally_desegregated_but/" target="_blank" rel="noopener">52 Years Ago! America was legally desegregated but not Equal. This Footages show you that, Racism was on Peak!</a></p>
@@ -364,134 +395,423 @@ footer p{margin:0}
               </div>
             </div>
             <div class="chips">
-              <span class="chip cat">Historie / reflexe</span>
+              <span class="chip cat">historical awareness</span>
               <span class="chip src">reddit · zdrojů 2</span>
             </div>
             <dl class="def">
-              <dt>Co to je</dt><dd>Staré záběry ukazují, že segregace v USA formálně skončila, ale rovnost ne hned.</dd>
-              <dt>Jak to hrají</dt><dd><b>Značky:</b> Vzdělávací a společensky angažované značky to sdílí jako připomínku, že historie se opakuje. <b>Tvůrci:</b> Tvůrci dělají &#x27;then vs now&#x27; srovnávací edity s komentářem k dnešku.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi">StudyFi úhel: historie není nuda na память, je to instrukce co se nemá opakovat — proto se ji vyplatí fakt pochopit.</dd>
+              <dt>Co to je</dt><dd>Archivní záběry rasové segregace v USA, sdílené jako připomínka historie a jejích dopadů dodnes</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> Do tématu se plete málokdo komerčně, spíš edukační instituce a média <b>Tvůrci:</b> Edukátoři dělají &#x27;historie, kterou neznáš&#x27; videa s kontextem a fakty</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Edu angle: karta &#x27;moderní historie za 60 vteřin&#x27; — tohle by mělo být probrané pořádně, ne jen věta v učebnici před maturitou</dd>
             </dl>
           </div>
-        </article></div><div class="rgroup"><span class="rflag">🇨🇿 CZ / SK</span><span class="count">z českých médií</span></div><div class="radar"><article class="trend">
+        </article></div></div><div class="rwrap" data-region="cz"><div class="rgroup"><span class="rflag">🇨🇿 CZ</span><span class="count">z médií</span></div><div class="radar"><article class="trend">
           <div class="rank">1</div>
           <div class="tbody">
             <div class="head-row">
-              <p class="headline">Nehoda Filipa Turka a internetové parodie</p>
+              <p class="headline">Turek: nehoda, výmluvy a pád z kandidatury</p>
               <div class="reach">
-                <div class="rnum">92</div><div class="rlbl">dosah</div>
-                <div class="bar"><span style="width:92%;background:var(--heat-1)"></span></div>
+                <div class="rnum">95</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:95%;background:var(--heat-1)"></span></div>
               </div>
             </div>
-            <div class="chips"><span class="chip cat">Politika / meme</span><span class="chip fyi">jen FYI</span></div>
+            <div class="chips"><span class="chip cat">politika/drama</span><span class="chip t-meme">meme</span></div>
             <dl class="def">
-              <dt>Co se stalo</dt><dd>Politik motoristů nabourá a internet z toho udělal parodie na GTA i Miladu Horákovou.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi"><span class="dim">— jen pro přehled, StudyFi na tom obsah nestaví</span></dd>
+              <dt>Co se stalo</dt><dd>Filip Turek nabořil auto a ignoroval značení, internet i politici se předhánějí v reakcích a Motoristé řeší, kdo ho nahradí u Babiše na kandidátce.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme formát &#x27;Turkovy osvědčené výmluvy&#x27; = ty, když vysvětluješ učiteli proč nemáš úkol – série reels s jeho hláškami vs. studentské výmluvy</dd>
             </dl>
           </div>
         </article><article class="trend">
           <div class="rank">2</div>
           <div class="tbody">
             <div class="head-row">
-              <p class="headline">Babiš shání prezidentského kandidáta</p>
+              <p class="headline">EET 2.0 se vrací</p>
               <div class="reach">
-                <div class="rnum">58</div><div class="rlbl">dosah</div>
-                <div class="bar"><span style="width:58%;background:var(--heat-2)"></span></div>
+                <div class="rnum">55</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:55%;background:var(--heat-2)"></span></div>
               </div>
             </div>
-            <div class="chips"><span class="chip cat">Politika</span><span class="chip fyi">jen FYI</span></div>
+            <div class="chips"><span class="chip cat">ekonomika/politika</span><span class="chip t-direct">přímo chytit</span></div>
             <dl class="def">
-              <dt>Co se stalo</dt><dd>Po sporech kolem Turka musí Babiš narychlo najít nového kandidáta na prezidenta.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi"><span class="dim">— jen pro přehled, StudyFi na tom obsah nestaví</span></dd>
+              <dt>Co se stalo</dt><dd>Sněmovna schválila návrat EET, tentokrát i s daňovým osvobozením spropitného v restauracích.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">krátký explainer &#x27;co se mění pro brigádníky&#x27; – spropitné bez daně, jak to ovlivní tvoji letní brigádu v kavárně</dd>
             </dl>
           </div>
         </article><article class="trend">
           <div class="rank">3</div>
           <div class="tbody">
             <div class="head-row">
-              <p class="headline">Napětí Rusko-Ukrajina a NATO</p>
+              <p class="headline">USA útočí na Írán</p>
               <div class="reach">
-                <div class="rnum">72</div><div class="rlbl">dosah</div>
-                <div class="bar"><span style="width:72%;background:var(--heat-1)"></span></div>
+                <div class="rnum">65</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:65%;background:var(--heat-1)"></span></div>
               </div>
             </div>
-            <div class="chips"><span class="chip cat">Válka / bezpečnost</span><span class="chip fyi">jen FYI</span></div>
+            <div class="chips"><span class="chip cat">geopolitika</span><span class="chip t-careful">opatrně</span></div>
             <dl class="def">
-              <dt>Co se stalo</dt><dd>Ukrajinské drony zasáhly ruské lodě, Litva a Lotyšsko varují před ruskými útoky v regionu.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi"><span class="dim">— jen pro přehled, StudyFi na tom obsah nestaví</span></dd>
+              <dt>Co se stalo</dt><dd>Trump pohrozil úderem na íránské mosty a elektrárny, eskalace na Blízkém východě pokračuje.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">rychlé &#x27;pochopit ve 30s&#x27; shrnutí kontextu konfliktu bez senzacechtivosti – pomůže zorientovat se v dějepisu/ZSV, ne šířit paniku</dd>
             </dl>
           </div>
         </article><article class="trend">
           <div class="rank">4</div>
           <div class="tbody">
             <div class="head-row">
-              <p class="headline">EET se vrací</p>
+              <p class="headline">Advent a Stripe kupují PayPal</p>
               <div class="reach">
-                <div class="rnum">50</div><div class="rlbl">dosah</div>
-                <div class="bar"><span style="width:50%;background:var(--heat-2)"></span></div>
+                <div class="rnum">35</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:35%;background:var(--heat-3)"></span></div>
               </div>
             </div>
-            <div class="chips"><span class="chip cat">Ekonomika / byrokracie</span></div>
+            <div class="chips"><span class="chip cat">byznys</span><span class="chip t-direct">přímo chytit</span></div>
             <dl class="def">
-              <dt>Co se stalo</dt><dd>Opozici neprošel návrh vyjmout bezhotovostní platby z nové EET.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Papírování a kontroly nikdo nemá rád — stejně jako bys nechtěl mít chaos v poznámkách před zkouškou, stát nechce chaos v účtenkách.</dd>
+              <dt>Co se stalo</dt><dd>Investiční skupiny nabídly 53 miliard dolarů za akvizici platební společnosti PayPal.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">mini vysvětlivka pro ekonomické/business studenty – co znamená akvizice tohoto rozsahu a jak funguje platební byznys</dd>
             </dl>
           </div>
         </article><article class="trend">
           <div class="rank">5</div>
           <div class="tbody">
             <div class="head-row">
-              <p class="headline">MS ve fotbale — semifinále a poločas</p>
+              <p class="headline">Střelba na Praze 10</p>
               <div class="reach">
-                <div class="rnum">48</div><div class="rlbl">dosah</div>
-                <div class="bar"><span style="width:48%;background:var(--heat-2)"></span></div>
+                <div class="rnum">40</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:40%;background:var(--heat-2)"></span></div>
               </div>
             </div>
-            <div class="chips"><span class="chip cat">Sport / show</span></div>
+            <div class="chips"><span class="chip cat">tragédie</span><span class="chip t-careful">jen FYI</span></div>
             <dl class="def">
-              <dt>Co se stalo</dt><dd>Blíží se semifinále a na poločase vystoupí Shakira, Madonna i BTS.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi">I hvězdy jako Shakira mají svůj &#x27;zkouškový&#x27; moment — připravit se na velkou show je jako připravit se na zápočet, jen s větším publikem.</dd>
+              <dt>Co se stalo</dt><dd>Při incidentu na Praze 10 zemřel jeden člověk, policie hledá podezřelého.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi"><span class="dim">— citlivé, obsah na tom nestavět</span></dd>
             </dl>
           </div>
         </article><article class="trend">
           <div class="rank">6</div>
           <div class="tbody">
             <div class="head-row">
-              <p class="headline">Střelba na Praze 10</p>
+              <p class="headline">Konec dotací mění solární trh</p>
+              <div class="reach">
+                <div class="rnum">25</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:25%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">energetika</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Bez dotací klesla výstavba domácích solárů o čtvrtinu, vedení nad trhem přebírají průmyslové projekty.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">krátký explainer k testu z ekologie/ekonomie – jak dotace ovlivňují trh, případně srovnání s domácím rozpočtem</dd>
+            </dl>
+          </div>
+        </article></div></div><div class="rwrap" data-region="sk"><div class="rgroup"><span class="rflag">🇸🇰 SK</span><span class="count">z médií</span></div><div class="radar"><article class="trend">
+          <div class="rank">1</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">MS vo futbale – drama a šoky</p>
+              <div class="reach">
+                <div class="rnum">88</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:88%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">šport</span><span class="chip t-meme">meme</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Španielsko rozstrieľalo najdrahší tím sveta, Francúzsko zlyhalo na celej čiare a Anglicko vs Argentína rieši viac než len loptu.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;Španielsko hrá ako švajčiarske hodinky&#x27; = tvoj study plán, keď ho konečne raz dodržíš vs. keď to vzdáš po 10 minútach (StudyFi ťa udrží v rytme).</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Rusko eskaluje – drony, špionáž, hrozby</p>
+              <div class="reach">
+                <div class="rnum">74</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:74%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">geopolitika</span><span class="chip t-careful">opatrně</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Drony z Bratislavy na Moskvu, ruská špionáž v Japonsku a varovanie Litvy pred útokmi na infraštruktúru ukazujú vyhrocujúcu sa vojnu.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">obsah o mediálnej gramotnosti: ako si s AI overiť fakty namiesto zdieľania panikárskych titulkov – &#x27;pomôž si pochopiť, nie strašiť sa&#x27;.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Dôvera kupuje Union</p>
+              <div class="reach">
+                <div class="rnum">63</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:63%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">byznys</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Na trhu zdravotných poisťovní ostávajú už len dvaja hráči – Penta a štát.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;trh so zdravotnými poisťovňami má 2 hráčov, tvoja skupinová práca tiež – ty a ChatGPT&#x27; + krátke vysvetlenie monopolu pre ekonómov/pravo.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Dopamínová past sociálnych sietí</p>
+              <div class="reach">
+                <div class="rnum">70</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:70%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">digital wellness</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Odborníci upozorňujú, že sociálne siete sú dizajnované tak, aby narúšali dopamínovú dráhu každého používateľa.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">priamy háčik: &#x27;Tvoj mozog nie je rozbitý, appky sú navrhnuté aby si scrolloval. StudyFi ti vráti focus bez cold turkey detoxu.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">5</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Ceny nafty prudko rastú</p>
+              <div class="reach">
+                <div class="rnum">55</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:55%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">ekonomika</span><span class="chip t-meme">meme</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Na čerpačkách hrozí unikátny jav – cena nafty prudko letí nahor.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;cena nafty stúpa rýchlejšie ako tvoja motivácia pred skúškou&#x27; – tip na štúdium, keď nemáš na benzín ani na čas.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">6</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Digitálny detox 2026</p>
+              <div class="reach">
+                <div class="rnum">52</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:52%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">trend</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Vychádza kompletný sprievodca odpojením od technológií a AI pre rok 2026.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">priama nadväznosť: &#x27;Detox neznamená zahodiť telefón, znamená používať ho múdrejšie – presne na to je StudyFi.&#x27;</dd>
+            </dl>
+          </div>
+        </article></div></div><div class="rwrap" data-region="de"><div class="rgroup"><span class="rflag">🇩🇪 DE / DACH</span><span class="count">z médií</span></div><div class="radar"><article class="trend">
+          <div class="rank">1</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">MS 2026 - finále a semifinále</p>
+              <div class="reach">
+                <div class="rnum">88</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:88%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">sport</span><span class="chip t-meme">meme</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Španělsko porazilo Francii a je ve finále MS, zatímco se řeší souboj Argentina-Anglie ve semifinále</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;Cucurellova obrana = ty, jak bráníš svůj rozvrh před prokrastinací&#x27; + poll &#x27;kdo vyhraje finále&#x27; v Reels</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Studenti dávají půlku příjmu za bydlení</p>
+              <div class="reach">
+                <div class="rnum">75</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:75%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">ekonomika</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Nová studie ukazuje, že vysokoškoláci v Německu utrácí v průměru 50 % příjmu za bydlení</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">přímý úhel: StudyFi jako nástroj, jak si aspoň ušetřit čas a nervy na učení, když peníze na bydlení stejně nikam neutečou — &#x27;aspoň studuj chytře, když bydlíš draze&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Zákaz sociálních sítí pod 13 let</p>
+              <div class="reach">
+                <div class="rnum">68</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:68%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">politika</span><span class="chip t-meme">meme</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Diskutuje se návrh na zákaz sociálních sítí pro děti mladší 13 let</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;Když ti stát zakáže scrollovat, ale tvůj brainrot fyzicky nejde vypnout&#x27; — StudyFi jako &#x27;legální brainrot, co ti aspoň pomůže k maturitě&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Bouře a povodně v Německu</p>
+              <div class="reach">
+                <div class="rnum">55</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:55%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">počasí</span><span class="chip t-careful">opatrně</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Silné bouře, kroupy a přívalové deště způsobily škody a zranění v severním Německu</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">opatrně: krátký tip content &#x27;co dělat, když ti bouřka vypne net a musíš se učit offline&#x27; — bez zlehčování škod</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">5</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">AfD zákaz v Durynsku</p>
               <div class="reach">
                 <div class="rnum">45</div><div class="rlbl">dosah</div>
                 <div class="bar"><span style="width:45%;background:var(--heat-2)"></span></div>
               </div>
             </div>
-            <div class="chips"><span class="chip cat">Kriminalita</span><span class="chip fyi">jen FYI</span></div>
+            <div class="chips"><span class="chip cat">politika</span><span class="chip t-careful">jen FYI</span></div>
             <dl class="def">
-              <dt>Co se stalo</dt><dd>Na Praze 10 došlo ke střelbě, jeden člověk zemřel, policie má podezřelého.</dd>
-              <dt class="play">StudyFi úhel</dt><dd class="studyfi"><span class="dim">— jen pro přehled, StudyFi na tom obsah nestaví</span></dd>
+              <dt>Co se stalo</dt><dd>Řeší se možný zákaz AfD v Durynsku, k slyšení má promluvit i Hape Kerkeling</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi"><span class="dim">— citlivé, obsah na tom nestavět</span></dd>
             </dl>
           </div>
-        </article></div>
+        </article><article class="trend">
+          <div class="rank">6</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Německý průmysl ztrácí pracovní místa</p>
+              <div class="reach">
+                <div class="rnum">40</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:40%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">ekonomika</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Německý průmysl přišel za rok o 177 000 pracovních míst</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">úhel: &#x27;trh práce se mění rychleji než kdy dřív — StudyFi ti pomůže učit se chytřeji, ne dřít víc, na obor co bude mít budoucnost&#x27;</dd>
+            </dl>
+          </div>
+        </article></div></div><div class="rwrap" data-region="latam"><div class="rgroup"><span class="rflag">🌎 LATAM</span><span class="count">z médií</span></div><div class="radar"><article class="trend">
+          <div class="rank">1</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Pico y placa ve 4 městech</p>
+              <div class="reach">
+                <div class="rnum">85</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:85%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">doprava</span><span class="chip t-meme">meme</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Bucaramanga, Pereira, Medellín a Cali dnes hlásí omezení provozu podle SPZ.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;Pico y placa tvého mozku&#x27; – dny, kdy prostě nemůžeš fungovat a nic se nedá plánovat, StudyFi ti aspoň naplánuje učení kolem toho</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Zemětřesení v Kolumbii (14.7. v noci)</p>
+              <div class="reach">
+                <div class="rnum">55</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:55%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">přírodní jev</span><span class="chip t-careful">opatrně</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>V noci na úterý zasáhlo Kolumbii zemětřesení, řeší se epicentrum a síla.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi"><span class="dim">— citlivé, obsah na tom nestavět</span></dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Odsouzení za střelbu v Cali (20 let)</p>
+              <div class="reach">
+                <div class="rnum">50</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:50%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">soud/násilí</span><span class="chip t-careful">opatrně</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Muž byl odsouzen na 20 let vězení za devět výstřelů na cizince v Cali.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi"><span class="dim">— citlivé, obsah na tom nestavět</span></dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Audit Cardique / Canal del Dique</p>
+              <div class="reach">
+                <div class="rnum">35</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:35%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">korupce</span><span class="chip t-meme">parodie</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Kontraloría odhalila devět zjištění k účetnictví Cardique při auditu Canal del Dique.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">parody: &#x27;Když prokrastinuješ semestrálku a najednou máš 9 nevysvětlitelných chyb v citacích&#x27; – StudyFi ti pohlídá zdroje a formátování, žádný audit tě nezaskočí</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">5</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Kapela z Tibasosa jede na Mundial orchestrů</p>
+              <div class="reach">
+                <div class="rnum">30</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:30%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">pozitivní zpráva</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Symfonická kapela z Tibasosa (Boyacá) bude reprezentovat Kolumbii na světovém mistrovství orchestrů.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">direct: content o tom, jak si nastavit studijní plán, když máš velký cíl (jako tahle kapela) – StudyFi jako tréninkový deník na cestě k tvé &#x27;světové soutěži&#x27; (zkoušky, přijímačky)</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">6</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Komise proti propouštění dopravních strážníků v Cali</p>
+              <div class="reach">
+                <div class="rnum">20</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:20%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">politika</span><span class="chip t-meme">meme</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Concejo de Cali zřídilo komisi, aby zabránilo hromadnému propouštění neúspěšných dopravních agentů.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;Když neuspěješ v testu, ale tvoje kamarádka svolá komisi, aby tě nevyhodili&#x27; – v realitě máš StudyFi, co tě na test připraví tak, že žádnou komisi nepotřebuješ</dd>
+            </dl>
+          </div>
+        </article></div></div><script>(function(){var b=document.querySelectorAll(".fbtn");var g=document.querySelectorAll(".rwrap");b.forEach(function(x){x.addEventListener("click",function(){b.forEach(function(y){y.classList.remove("active")});x.classList.add("active");var f=x.dataset.f;g.forEach(function(w){w.style.display=(f==="all"||w.dataset.region===f)?"":"none"})})})})();</script>
+      
       <div class="slabel"><h2>Konkurence &amp; edtech</h2><span class="count">jak se veze konkurence</span></div><p class="sdesc">Kde se edtech/study appky vezou na trendech — a kde je mezera. <span class="dim">Odhad Claude z kontextu, ne měřená data.</span></p><div class="comp"><div class="comp-row">
-          <div class="comp-logo" style="background:#12b76a">Kn</div>
-          <div class="comp-b"><div class="cn">Knowunity</div><div class="cd">Mohli by chytit trend se ztraceným Microsoft účtem a udělat kampaň o zálohování poznámek do cloudu.</div></div>
-          <span class="comp-tag t-watch">příležitost</span>
-        </div><div class="comp-row">
-          <div class="comp-logo" style="background:#5b53e0">Ph</div>
-          <div class="comp-b"><div class="cn">Photomath</div><div class="cd">Story o klukovi s autismem sedí na jejich narativu &#x27;každý řeší matiku jinak&#x27;, zatím to nikdo z konkurence nehraje.</div></div>
-          <span class="comp-tag t-watch">příležitost</span>
-        </div><div class="comp-row">
-          <div class="comp-logo" style="background:#f0913a">Du</div>
-          <div class="comp-b"><div class="cn">Duolingo</div><div class="cd">Jejich agresivně vtipný tón by skvěle seděl na Stanley cup meme vlnu, ale zatím na ni nikdo z edtech nenaskočil.</div></div>
+          <div class="comp-logo" style="background:#12b76a">Du</div>
+          <div class="comp-b"><div class="cn">Duolingo</div><div class="cd">Umí skvěle jet na trend cyklech (typu Stanley meme) díky chaotické brand personě na sítích — StudyFi může zkusit podobný odvázaný tón místo korporátního</div></div>
           <span class="comp-tag t-watch">sledovat</span>
         </div><div class="comp-row">
-          <div class="comp-logo" style="background:#e8564a">Le</div>
-          <div class="comp-b"><div class="cn">Let&#x27;s Study</div><div class="cd">MS ve fotbale a poločas se Shakirou je velká sledovanost, dá se z toho udělat lehký engagement obsah bez rizika.</div></div>
+          <div class="comp-logo" style="background:#5b53e0">Kn</div>
+          <div class="comp-b"><div class="cn">Knowunity</div><div class="cd">Silná v edukativním obsahu typu historie/shrnutí, ale chybí jí humor a lidský/wholesome rozměr — mezera pro StudyFi</div></div>
+          <span class="comp-tag t-watch">příležitost</span>
+        </div><div class="comp-row">
+          <div class="comp-logo" style="background:#f0913a">Qu</div>
+          <div class="comp-b"><div class="cn">Quizlet</div><div class="cd">Zatím nevyužívá &#x27;morning routine&#x27; formát pro studijní rutiny — StudyFi může být první, kdo to zabere</div></div>
           <span class="comp-tag t-new">nový tah</span>
+        </div><div class="comp-row">
+          <div class="comp-logo" style="background:#e8564a">Le</div>
+          <div class="comp-b"><div class="cn">Let&#x27;s Study</div><div class="cd">Nemá silnou přítomnost v narativu &#x27;bezpečí dat/poznámek&#x27; — StudyFi může budovat důvěru přes &#x27;tvoje poznámky se neztratí&#x27;</div></div>
+          <span class="comp-tag t-watch">příležitost</span>
         </div></div>
       
       <section class="cal"><h2>⏰ Kalendář</h2><p class="quiet">Žádná událost na obzoru — klidné období. Ideální čas natočit zásobu obsahu na další vlnu.</p></section>
       
     </main>
     <footer>
-      <p>Vygenerováno 2026-07-15 v 13:16 · StudyFi Trend Radar. Data z veřejných zdrojů; „jak to hrají" a StudyFi úhly píše Claude.</p>
+      <p>Vygenerováno 2026-07-15 v 13:43 · StudyFi Trend Radar. Data z veřejných zdrojů; výběr, klastrování a StudyFi úhly píše Claude.</p>
     </footer></body>
 </html>
