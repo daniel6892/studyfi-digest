@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>StudyFi Trend Radar · 2026-11-01</title>
+<style>
+:root{
+  --paper:#f6f7f9; --ink:#15171d; --ink-soft:#545a66; --dim:#8b909c;
+  --line:#e7e9ee; --line-soft:#eef0f3; --card:#ffffff;
+  --accent:#6d5efc; --accent-soft:#efedfe; --chip-bg:#eef0f4; --radius:9px;
+  --shadow:0 1px 2px rgba(18,20,26,.05), 0 1px 1px rgba(18,20,26,.03);
+  --heat-1:#e8564a; --heat-2:#f0913a; --heat-3:#3b82c4;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0f1014; --ink:#e7e9ef; --ink-soft:#a6abb8; --dim:#6d727e;
+    --line:#232630; --line-soft:#1b1d25; --card:#16181f;
+    --accent:#8b7dff; --accent-soft:#1e1b2e; --chip-bg:#1d2028;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="light"]{
+  --paper:#f6f7f9; --ink:#15171d; --ink-soft:#545a66; --dim:#8b909c;
+  --line:#e7e9ee; --line-soft:#eef0f3; --card:#ffffff;
+  --accent:#6d5efc; --accent-soft:#efedfe; --chip-bg:#eef0f4;
+  --shadow:0 1px 2px rgba(18,20,26,.05), 0 1px 1px rgba(18,20,26,.03);
+}
+:root[data-theme="dark"]{
+  --paper:#0f1014; --ink:#e7e9ef; --ink-soft:#a6abb8; --dim:#6d727e;
+  --line:#232630; --line-soft:#1b1d25; --card:#16181f;
+  --accent:#8b7dff; --accent-soft:#1e1b2e; --chip-bg:#1d2028;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--font); font-size:15px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+main{max-width:800px; margin:0 auto; padding:0 24px 72px}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:var(--mono); font-size:.85em; background:var(--chip-bg); padding:1px 6px; border-radius:5px}
+
+.top{
+  max-width:800px; margin:0 auto; padding:34px 24px 24px;
+}
+.brand{display:flex; align-items:center; gap:11px}
+.mark{
+  width:32px; height:32px; border-radius:9px; flex:0 0 auto;
+  display:flex; align-items:center; justify-content:center; color:#fff;
+  background:var(--accent);
+}
+.mark svg{width:18px; height:18px}
+.logo{font-size:20px; font-weight:700; letter-spacing:-.02em}
+.tag{font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--dim); font-weight:600}
+.head-meta{display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:16px; font-size:13px; color:var(--ink-soft)}
+.head-meta .date{font-family:var(--mono); font-variant-numeric:tabular-nums}
+.head-meta strong{color:var(--ink); font-weight:650}
+.budget{font-family:var(--mono); font-size:12px; color:var(--dim)}
+
+section{margin-top:56px}
+h2{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--ink-soft); margin:0 0 4px; text-wrap:balance}
+.sub{margin:0 0 22px; color:var(--dim); font-size:13px; max-width:60ch; line-height:1.5}
+.quiet{color:var(--dim); font-style:italic; font-size:13.5px}
+
+/* --- Trend Radar --- */
+.dot{width:32px;height:32px;border-radius:9px;background:var(--accent);flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;color:#fff}
+.dot svg{width:17px;height:17px}
+.brand h1{margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--dim);font-weight:600}
+
+.slabel{display:flex;align-items:baseline;gap:10px;margin:0 0 5px}
+.slabel h2{margin:0;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft)}
+.count{font-size:12px;color:var(--dim);font-family:var(--mono)}
+.sdesc{margin:0 0 8px;font-size:13px;color:var(--dim);max-width:58ch;line-height:1.5}
+
+.rgroup{display:flex;align-items:baseline;gap:10px;margin:26px 0 2px}
+.rflag{font-size:13px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+
+.radar .trend{display:flex;gap:18px;padding:26px 0;border-bottom:1px solid var(--line)}
+.radar .trend:last-child{border-bottom:0}
+.rank{flex:0 0 auto;width:34px;font-family:var(--mono);font-size:26px;font-weight:600;
+  color:var(--ink);letter-spacing:-.03em;line-height:1;padding-top:2px}
+.radar .trend:nth-child(n+4) .rank{color:var(--dim)}
+.tbody{flex:1;min-width:0}
+.head-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.headline{font-size:18px;font-weight:700;line-height:1.34;letter-spacing:-.01em;margin:0;color:var(--ink)}
+.headline a:hover{color:var(--accent)}
+.reach{flex:0 0 auto;text-align:right;min-width:92px}
+.reach .rnum{font-family:var(--mono);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.reach .rlbl{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);margin-top:1px}
+.bar{height:4px;border-radius:2px;background:var(--line);margin-top:7px;overflow:hidden}
+.bar span{display:block;height:100%;border-radius:2px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0 16px}
+.chip{font-size:11px;font-weight:600;color:var(--ink-soft);background:var(--chip-bg);padding:3px 9px;border-radius:20px}
+.chip.cat{color:#fff;background:var(--accent)}
+.chip.src{font-family:var(--mono);font-weight:500}
+.chip.fyi{color:var(--heat-2);background:color-mix(in srgb,var(--heat-2) 14%,transparent)}
+.chip.t-direct{color:#12915a;background:color-mix(in srgb,#12b76a 14%,transparent)}
+.chip.t-meme{color:var(--accent);background:var(--accent-soft)}
+.chip.t-careful{color:var(--heat-2);background:color-mix(in srgb,var(--heat-2) 14%,transparent)}
+
+/* přepínací filtry */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.fbtn{font:inherit;font-size:13px;font-weight:600;color:var(--ink-soft);
+  background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:6px 14px;cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.fbtn:hover{border-color:var(--accent)}
+.fbtn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rwrap{scroll-margin-top:12px}
+.def{display:grid;grid-template-columns:92px 1fr;gap:6px 14px;font-size:13.5px}
+.def dt{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);font-weight:700;padding-top:3px}
+.def dd{margin:0;color:var(--ink-soft);line-height:1.5}
+.def dd.studyfi{color:var(--ink)}
+.def .play{color:var(--accent)}
+.def b{color:var(--ink);font-weight:650}
+
+/* edtech konkurence */
+.comp{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;margin-top:6px}
+.comp-row{display:flex;align-items:center;gap:14px;padding:15px 18px;border-bottom:1px solid var(--line-soft)}
+.comp-row:last-child{border-bottom:0}
+.comp-logo{width:34px;height:34px;border-radius:8px;flex:0 0 auto;display:flex;align-items:center;
+  justify-content:center;color:#fff;font-weight:700;font-size:13px;font-family:var(--mono)}
+.comp-b{flex:1;min-width:0}
+.comp-b .cn{font-weight:650;font-size:14px}
+.comp-b .cd{font-size:12.5px;color:var(--ink-soft)}
+.comp-tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;flex:0 0 auto}
+.t-new{color:var(--heat-1);background:color-mix(in srgb,var(--heat-1) 13%,transparent)}
+.t-watch{color:var(--heat-3);background:color-mix(in srgb,var(--heat-3) 13%,transparent)}
+@media (max-width:560px){
+  .head-row{flex-direction:column-reverse;align-items:flex-start}
+  .reach{text-align:left}
+  .def{grid-template-columns:1fr;gap:2px}.def dt{padding-top:9px}
+}
+
+/* kalendář */
+.cal-grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.cal-card{
+  background:var(--card); border:1px solid var(--line);
+  border-left:3px solid var(--phase); border-radius:var(--radius); padding:18px 20px;
+  box-shadow:var(--shadow);
+}
+.cal-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px}
+.phase-pill{
+  font-size:11px; font-weight:700; color:#fff; background:var(--phase);
+  padding:3px 10px; border-radius:20px; letter-spacing:.02em;
+}
+.cal-when{font-size:13px; color:var(--ink-soft); font-variant-numeric:tabular-nums}
+.cal-when strong{font-size:18px; color:var(--phase)}
+.cal-card h3{margin:0 0 5px; font-size:15px; font-weight:700}
+.market{font-size:11px; color:var(--dim); font-weight:600; letter-spacing:.05em}
+.cal-gist{margin:0; font-size:13px; color:var(--ink-soft)}
+.cal-note{margin:10px 0 0; font-size:12px; color:var(--dim); border-left:2px solid var(--line); padding-left:10px}
+.cal-ideas{margin:12px 0 0; padding-left:16px; font-size:13px; color:var(--ink-soft)}
+.cal-ideas li{margin:3px 0}
+
+/* zvuky */
+.table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--card); box-shadow:var(--shadow)}
+table{width:100%; border-collapse:collapse; font-size:13px; min-width:460px}
+thead th{
+  text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--dim); font-weight:600; padding:13px 18px; border-bottom:1px solid var(--line);
+}
+td{padding:14px 18px; border-bottom:1px solid var(--line-soft)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--accent-soft)}
+.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums}
+.s-name{display:flex; align-items:center; gap:12px}
+.s-tile{
+  flex:0 0 auto; width:30px; height:30px; border-radius:7px; color:#fff;
+  background:linear-gradient(135deg,#69C9D0,#EE1D52);
+  display:flex; align-items:center; justify-content:center;
+}
+.s-tile svg{width:15px; height:15px}
+.s-name a{font-weight:600}
+.s-author{color:var(--dim)}
+.badge{
+  font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--accent); background:var(--accent-soft); padding:1px 7px; border-radius:5px; margin-left:8px;
+}
+
+/* trendy */
+.trend{display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--line-soft)}
+.trend:last-child{border-bottom:0}
+.thumb{
+  position:relative; flex:0 0 auto; width:52px; height:52px; border-radius:10px;
+  background:var(--tile); color:#fff; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+.thumb svg{width:24px; height:24px}
+.glyph-mono{font-family:var(--mono); font-weight:700; font-size:16px; letter-spacing:-.02em}
+.thumb-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.rank-badge{
+  position:absolute; bottom:0; right:0; min-width:16px; height:16px; padding:0 3px;
+  background:rgba(0,0,0,.62); color:#fff; font-family:var(--mono); font-size:10px;
+  font-weight:600; display:flex; align-items:center; justify-content:center;
+  border-top-left-radius:6px; letter-spacing:-.02em;
+}
+.dim{color:var(--dim)}
+
+/* dnešní tah (TL;DR) */
+.tldr{
+  display:flex; gap:16px; align-items:flex-start; margin-top:28px;
+  background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:var(--radius); padding:18px 22px; box-shadow:var(--shadow);
+}
+.tldr-label{
+  flex:0 0 auto; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--accent); padding-top:3px;
+}
+.tldr p{margin:0; font-size:15px; line-height:1.55; color:var(--ink)}
+.tld-tag{display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--phase);
+  padding:2px 9px; border-radius:20px; margin-right:6px}
+
+/* brief — trend jako hotový úhel na post */
+.brief{display:flex; gap:16px; padding:22px 0; border-bottom:1px solid var(--line-soft)}
+.brief:last-child{border-bottom:0}
+.brief-body{min-width:0; flex:1}
+.brief-head{display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin-bottom:10px}
+.angle{font-size:13px; font-weight:700; letter-spacing:.01em; color:var(--ink); text-transform:uppercase}
+.moment-hook{font-size:16px; font-weight:700; color:var(--ink); line-height:1.4; letter-spacing:-.01em}
+.moment-hook:hover{color:var(--accent)}
+.sig{font-size:11px; font-weight:600; color:var(--ink-soft); background:var(--chip-bg);
+  padding:2px 9px; border-radius:20px}
+.ideas{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:7px}
+.ideas li{font-size:13px; line-height:1.5; color:var(--ink-soft); padding-left:16px; position:relative}
+.ideas li::before{content:"›"; position:absolute; left:0; color:var(--accent); font-weight:700}
+.ideas strong{color:var(--ink); font-weight:650}
+.src-line{display:inline-block; margin-top:12px; font-size:12px; color:var(--dim); text-decoration:none}
+.src-line:hover{color:var(--accent)}
+.src-from{color:var(--dim)}
+.src-tag{font-family:var(--mono); font-size:11px; background:var(--chip-bg); padding:2px 7px;
+  border-radius:5px; color:var(--ink-soft)}
+
+/* Co natočit — konkrétní posty (Claude) */
+.posts{display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.post{background:var(--card); border:1px solid var(--line); border-top:3px solid var(--cat);
+  border-radius:var(--radius); padding:20px 22px; display:flex; flex-direction:column; gap:11px;
+  box-shadow:var(--shadow)}
+.post-head{display:flex; align-items:center; gap:9px; flex-wrap:wrap}
+.post-cat{font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  color:#fff; background:var(--cat); padding:3px 9px; border-radius:20px}
+.post-title{font-size:14px; font-weight:700; color:var(--ink)}
+.post-hook{margin:0; font-size:16px; font-weight:650; line-height:1.4; color:var(--ink); letter-spacing:-.01em}
+.post-shots{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:5px;
+  font-size:13px; line-height:1.5; color:var(--ink-soft)}
+.post-shots li{padding-left:3px}
+.post-cap{margin:0; font-size:13px; color:var(--ink-soft); line-height:1.5}
+.post-tags{display:flex; flex-wrap:wrap; gap:6px}
+.ptag{font-size:11px; color:var(--accent); background:var(--accent-soft); padding:2px 8px;
+  border-radius:20px; font-weight:500}
+.post-foot{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:12px; color:var(--dim);
+  border-top:1px solid var(--line-soft); padding-top:12px; margin-top:2px}
+.p-sound{color:var(--ink-soft); font-weight:600}
+
+/* sledované účty (watch) */
+.watch-grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.w-acc{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:20px 22px; box-shadow:var(--shadow)}
+.w-handle{display:inline-block; font-weight:700; font-size:14px; margin-bottom:14px}
+.w-posts{display:flex; flex-direction:column; gap:14px}
+.w-post{display:flex; gap:12px; align-items:center; color:inherit; text-decoration:none}
+.w-post:hover .w-cap{color:var(--accent)}
+.w-thumb{width:44px; height:44px; border-radius:9px}
+.w-thumb .glyph-mono{font-size:13px}
+.w-body{min-width:0; flex:1; display:flex; flex-direction:column; gap:4px}
+.w-cap{font-size:13px; line-height:1.4; color:var(--ink);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.w-meta{font-size:11px; color:var(--ink-soft); font-variant-numeric:tabular-nums}
+
+footer{max-width:800px; margin:40px auto 0; padding:24px; border-top:1px solid var(--line);
+  font-size:12px; color:var(--dim)}
+footer p{margin:0}
+@media (max-width:520px){
+  .cal-grid, .posts, .watch-grid{grid-template-columns:1fr}
+  main{padding:0 18px 40px}
+  .top{padding:26px 18px 20px}
+  section{margin-top:44px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+    <header class="top">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></span>
+        <div>
+          <div class="kicker">StudyFi · Trend Radar</div>
+          <h1>Co teď letí na sítích</h1>
+        </div>
+      </div>
+      <div class="head-meta">
+        <span class="date">2026-11-01</span>
+        <span><strong>4</strong> celosvětových · <strong>4</strong> trhů</span>
+      </div>
+    </header>
+    <main>
+      <div class="slabel"><h2>Makrotrendy</h2><span class="count">co se dá chytit a předělat</span></div><p class="sdesc">Co se teď šíří po sítích — vybrané hijackovatelné momenty. U každého <b>StudyFi úhel</b> = jak to remaknout (u citlivých aspoň meme/parodie). Přepínej filtry.</p><div class="filters"><button class="fbtn active" data-f="all">Vše</button><button class="fbtn" data-f="world">🌍 Svět</button><button class="fbtn" data-f="cz">🇨🇿 CZ</button><button class="fbtn" data-f="sk">🇸🇰 SK</button><button class="fbtn" data-f="de">🇩🇪 DE / DACH</button><button class="fbtn" data-f="latam">🌎 LATAM</button></div><div class="rwrap" data-region="world"><div class="rgroup"><span class="rflag">🌍 Celosvětové</span><span class="count">virální momenty</span></div><div class="radar"><article class="trend">
+          <div class="rank">1</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.reddit.com/r/nottheonion/comments/1xklg3g/pope_leo_xiv_declines_to_credit_himself_for_white/" target="_blank" rel="noopener">Pope Leo XIV declines to credit himself for White Sox playoff return</a></p>
+              <div class="reach">
+                <div class="rnum">18</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:18%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="chip cat">absurdní headline</span>
+              <span class="chip src">reddit · zdrojů 2</span>
+            </div>
+            <dl class="def">
+              <dt>Co to je</dt><dd>Papež Lev XIV. odmítl přijmout zásluhu za postup White Sox do play-off, i když je prý fanoušek.</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> značky mohou hrát na &#x27;pokoru&#x27; – ironicky si přivlastnit cizí úspěch a pak to s nadsázkou popřít, přesně jako papež. <b>Tvůrci:</b> tvůrci dělají skeče na téma &#x27;když se tě ptají, kdo za tím stojí, a ty jen pokrčíš rameny&#x27;, přehánějí falešnou skromnost.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;Papež neuznává zásluhu za výhru = ty, když skupinový projekt táhla kámoška, ale ty řekneš učiteli &quot;byl to týmovej výkon&quot;&#x27;.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.reddit.com/r/nottheonion/comments/1xkcx8y/sand_traps_mistaken_for_impact_craters_on_golf/" target="_blank" rel="noopener">Sand traps mistaken for impact craters on golf course</a></p>
+              <div class="reach">
+                <div class="rnum">18</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:18%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="chip cat">absurdní záměna</span>
+              <span class="chip src">reddit · zdrojů 2</span>
+            </div>
+            <dl class="def">
+              <dt>Co to je</dt><dd>Lidé si na golfovém hřišti spletli obyčejné bункry s krátery po meteoritu.</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> golfové či outdoorové značky mohou zahrát &#x27;spot the difference&#x27; content – krátery vs. bunkry, věda vs. sport. <b>Tvůrci:</b> tvůrci dělají &#x27;věřil bys tomu&#x27; formáty, kde ukazují běžné věci, co vypadají jak z vesmíru.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme: &#x27;bunkr vs. kráter = tvoje poznámky před zkouškou vs. to, co z nich po týdnu vůbec chápeš&#x27;.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.reddit.com/r/nottheonion/comments/1xkuq6h/flinders_christian_community_college_forced_to/" target="_blank" rel="noopener">Flinders Christian Community College forced to apologise for asking students to dress disabled</a></p>
+              <div class="reach">
+                <div class="rnum">18</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:18%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="chip cat">PR fail / omluva</span>
+              <span class="chip src">reddit · zdrojů 2</span>
+            </div>
+            <dl class="def">
+              <dt>Co to je</dt><dd>Škola se musela veřejně omluvit poté, co po studentech chtěla, aby se oblékli za lidi s postižením – vyvolalo to kritiku.</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> značky se tématu radši vyhýbají přímo, max. ho zmíní jako varovný příklad při DEI kampaních. <b>Tvůrci:</b> tvůrci glosují šablonovitý jazyk &#x27;oficiálních omluv&#x27; škol a firem – pořád to zní stejně, ironizují formát, ne oběti.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">meme (jen na formát omluvy, ne na téma postižení): &#x27;škola se omlouvá za blbej nápad = ty, když vysvětluješ profesorovi, proč je seminárka nahraná o den pozdě&#x27;.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.reddit.com/r/nottheonion/comments/1xkgafb/driver_said_the_devil_had_taken_over_when_he_sped/" target="_blank" rel="noopener">Driver said &quot;the Devil had taken over&quot; when he sped past Halloween parade crowds in Freeport</a></p>
+              <div class="reach">
+                <div class="rnum">24</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:24%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="chip cat">bizarní výmluva</span>
+              <span class="chip src">reddit · zdrojů 3</span>
+            </div>
+            <dl class="def">
+              <dt>Co to je</dt><dd>Řidič prohlásil, že ho &#x27;posedl ďábel&#x27;, když projel vysokou rychlostí davem na halloweenském průvodu.</dd>
+              <dt>Jak to hrají</dt><dd><b>Značky:</b> značky se tomu vyhýbají, případně to využijí jen neutrálně v PSA o bezpečnosti za volantem. <b>Tvůrci:</b> bezpečnostně zaměření tvůrci to mohou zmínit v sérii &#x27;nejbizarnější výmluvy řidičů&#x27;, bez zlehčování možných zraněných.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">—</dd>
+            </dl>
+          </div>
+        </article></div></div><div class="rwrap" data-region="cz"><div class="rgroup"><span class="rflag">🇨🇿 CZ</span><span class="count">z médií</span></div><div class="radar"><article class="trend">
+          <div class="rank">1</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.idnes.cz/ekonomika/domaci/syrovatka-rybi-olej-ceny-zdrazeni-nedostatek.A261026_091506_ekonomika_vebe#utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=zpravodaj&amp;utm_content=main" target="_blank" rel="noopener">Drahý protein</a></p>
+              <div class="reach">
+                <div class="rnum">40</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:40%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">fitness/trend</span><span class="chip t-direct">carousel</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Syrovátkový protein a rybí tuk citelně zdražují, což pocítí i studenti co cvičí.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Carousel na IG: &#x27;Tvůj protein zdražil, tady je jak nešidit tělo i peněženku&#x27; s porovnáním cen a levnějšími alternativami. Spojit s tipem na studijní rutinu kolem tréninku — &#x27;posiluj tělo i mozek bez vysávání peněženky&#x27;.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.novinky.cz/clanek/lifestyle-sex-vztahy-chcete-opravdu-rozumet-muzum-odpovedi-hledejte-primo-u-nich-40605125" target="_blank" rel="noopener">Jak pochopit kluky</a></p>
+              <div class="reach">
+                <div class="rnum">50</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:50%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">vztahy</span><span class="chip t-meme">skeč</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Článek radí, že chceš-li pochopit muže, zeptej se rovnou jich.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Skit video: &#x27;Co kluci fakt myslí vs. co řeknou&#x27; — dvě scénky vedle sebe s komentářem. Hook: &#x27;Vědci zjistili převratnou věc: chceš vědět co si kluk myslí? Zeptej se ho. Šok.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.novinky.cz/clanek/cestovani-maly-poklad-jen-par-hodin-od-bangkoku-40604773" target="_blank" rel="noopener">Tajný poklad u Bangkoku</a></p>
+              <div class="reach">
+                <div class="rnum">35</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:35%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">cestování</span><span class="chip t-direct">carousel</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Objevilo se neznámé místo jen pár hodin od Bangkoku, ideální pro levný výlet.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Carousel &#x27;secret spot&#x27; pro studentské cestování o prázdninách s rozpočtem pod 1000 Kč na den. Hook: &#x27;Než půjdeš na dovolenou jako influenceři, mrkni sem — nikdo o tom zatím neví.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://denikn.cz/2238823/s-ceskem-jsem-totalne-provazany-verim-mu-rika-oceneny-vishwanathan/" target="_blank" rel="noopener">Od úklidu záchodů k ocenění</a></p>
+              <div class="reach">
+                <div class="rnum">45</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:45%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">motivace</span><span class="chip t-meme">reakce/stitch</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Oceněný odborník přiznává, že na začátku kariéry uklízel záchody na ubytovně.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Reels s citátem a textem na obrazovce: &#x27;Než jsi slavnej, děláš nejhorší práci.&#x27; Propojit s studijní paralelou — &#x27;i teď přepisuješ nudný poznámky, ale za rok ti to dá smysl&#x27; — motivační hook pro období zkoušek.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">5</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://denikn.cz/2234730/proti-ai-nemame-sanci-muzeme-jen-vyvinout-stroje-ktere-zapas-s-ni-vybojuji-za-nas-rika-matematik/" target="_blank" rel="noopener">AI nás válcuje?</a></p>
+              <div class="reach">
+                <div class="rnum">60</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:60%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">tech/AI</span><span class="chip t-meme">reakce/stitch</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Matematik tvrdí, že lidé proti AI nemají šanci a musíme stavět stroje, co to za nás vybojují.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Reakce video: &#x27;AI ti nevezme školu, pomůže ti ji zvládnout.&#x27; Ukázat na konkrétním příkladu jak StudyFi AI vysvětlí látku místo toho, aby ji vyplivla za tebe — hook: &#x27;Matematik se bojí AI, my ji naučíme dělat domácí úkoly s tebou, ne za tebe.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">6</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.seznamzpravy.cz/clanek/zdravi-plus-spanek-jidlo-klouby-i-srdce-redaktori-podstoupili-kompletni-sportovni-prohlidku-318905" target="_blank" rel="noopener">Zkontroluj si srdce, než zase trénuješ</a></p>
+              <div class="reach">
+                <div class="rnum">30</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:30%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">zdraví</span><span class="chip t-direct">carousel</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Sportovcům se doporučuje nechat si zkontrolovat srdce a klouby, cena vyšetření se liší.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Carousel checklist pro studenty-sportovce: &#x27;Trénuješ a studuješ zároveň? Tohle si zkontroluj, než zkolabuješ v tělocvičně i u zkoušek.&#x27; Spojit s tipy na balanc mezi sportem a učením.</dd>
+            </dl>
+          </div>
+        </article></div></div><div class="rwrap" data-region="sk"><div class="rgroup"><span class="rflag">🇸🇰 SK</span><span class="count">z médií</span></div><div class="radar"><article class="trend">
+          <div class="rank">1</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Strana, co chce opustit sluneční soustavu</p>
+              <div class="reach">
+                <div class="rnum">65</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:65%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">politika/meme</span><span class="chip t-meme">meme</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Britského komentátora u slovenských voleb zaujala strana s absurdním programem opustit sluneční soustavu</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Meme formát: screenshot titulku + text &#x27;Když máš deadline a řešíš radši vesmírné plány než zápočet&#x27;. Caption: &#x27;StudyFi ti pomůže zůstat aspoň na Zemi a dodat úkol včas.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Chromiak v NHL bez trémy</p>
+              <div class="reach">
+                <div class="rnum">55</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:55%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">sport</span><span class="chip t-meme">reakce/stitch</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Slovenský hokejista Chromiak se dostal do NHL díky dobré střele a zraněním spoluhráčů, prý ani nestihl být nervózní</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Krátké reels: &#x27;Jak zůstat v klidu i pod tlakem - lekce od Chromiaka&#x27;. Propojit s tím, jak StudyFi pomáhá zvládat stres před zkouškami stejně chladnokrevně jako hokejista svůj debut.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline">Z hubnutí k 400 kg na vzpírání</p>
+              <div class="reach">
+                <div class="rnum">60</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:60%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">fitness/lifestyle</span><span class="chip t-direct">before/after</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Chlap začal cvičit kvůli hubnutí a dnes zvedá 400 kg, přiznává že téměř vyhořel</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Before-after carousel: od &#x27;chci zhubnout&#x27; po &#x27;400kg pb&#x27; + varování před vyhořením. StudyFi hook: &#x27;Stejně jako v posilovně - i ve škole progres bez odpočinku vede k vyhoření, AI ti pomůže najít efektivní tempo místo přetěžování.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.aktuality.sk/clanok/4vQvfai/najvacsi-kryptolup-v-dejinach-fbi-tvrdi-ze-za-kradez-63-miliardy-z-binance-stoja-severokorejski-hackeri/" target="_blank" rel="noopener">Severokorejští hackeři a krypto loupež</a></p>
+              <div class="reach">
+                <div class="rnum">70</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:70%;background:var(--heat-1)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">tech/krypto</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>FBI tvrdí, že za krádeží 6,3 miliardy z Binance stojí severokorejští hackeři - největší krypto loupež historie</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Krátké vysvětlovací video &#x27;Jak hackeři ukradli miliardy - vysvětleno za 60 sekund&#x27;. StudyFi úhel: AI ti pomůže pochopit složité tech témata jako je kyberbezpečnost, ne jen scrollovat clickbaity.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">5</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.aktuality.sk/clanok/mKiRudm/pocasie-predpoved-na-nedelu/" target="_blank" rel="noopener">Nedělní ochlazení</a></p>
+              <div class="reach">
+                <div class="rnum">30</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:30%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">počasí/lifestyle</span><span class="chip t-meme">skeč</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>V neděli přijde citelné podzimní ochlazení</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Krátký skit: &#x27;Já v září vs. já v neděli&#x27; - od tílka k dekovce a čaji. Payoff: &#x27;Zabal se do deky a pusť si StudyFi shrnutí místo scrollování po instagramu.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">6</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.aktuality.sk/clanok/ukZH5hm/v-roku-2008-elon-musk-takmer-skrachoval-jedno-cislo-odhaluje-aky-monstruozny-zamer-mu-napokon-vysiel/" target="_blank" rel="noopener">Muskova sázka z roku 2008</a></p>
+              <div class="reach">
+                <div class="rnum">50</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:50%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">tech/byznys</span><span class="chip t-direct">carousel</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>V roce 2008 byl Elon Musk na pokraji krachu, dnes jedno číslo odhaluje, jak obří byl jeho plán</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Carousel &#x27;Od bankrotu k impériu - Muskův risk, co vyšel&#x27;. StudyFi hook: i geniální plány potřebují trpělivost a data - přesně to, co ti pomůže pochopit při studiu ekonomie nebo byznysu.</dd>
+            </dl>
+          </div>
+        </article></div></div><div class="rwrap" data-region="de"><div class="rgroup"><span class="rflag">🇩🇪 DE / DACH</span><span class="count">z médií</span></div><div class="radar"><article class="trend">
+          <div class="rank">1</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.spiegel.de/sport/fussball/fc-bayern-2-2-gegen-borussia-dortmund-meister-im-ausnahmezustand-a-7ba738f3-3b3b-4273-951e-a07e26cb19e8#ref=rss" target="_blank" rel="noopener">Bayern remizoval, mistr v krizi</a></p>
+              <div class="reach">
+                <div class="rnum">55</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:55%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">sport</span><span class="chip t-meme">reakce/stitch</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>FC Bayern hrál 2:2 s Dortmundem a fanoušci mluví o výjimečném stavu u obhájce titulu.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Reels duet se záběrem gólu + text &#x27;Bayern o víkendu vs. ty o zkouškovém&#x27;: oba jedou v nouzovém režimu, ale nakonec to nějak doklepou. CTA: &#x27;StudyFi tě z nouzového stavu dostane dřív než trenéra Bayernu.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.spiegel.de/stil/trendfarbe-braun-dominiert-die-mode-was-sagt-das-ueber-uns-aus-a-e2a0943f-eb37-412a-9fc7-8115c8ab8517#ref=rss" target="_blank" rel="noopener">Hnědá je nová černá</a></p>
+              <div class="reach">
+                <div class="rnum">35</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:35%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">móda</span><span class="chip t-direct">carousel</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Módní trendy ukazují, že hnědá barva dominuje šatníkům sezóny.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Carousel &#x27;Co tvoje barva poznámek prozrazuje o tvém studijním stylu&#x27; - hnědá/earthy tóny spojíme s &#x27;cozy study aesthetic&#x27;. Druhý slide: jak StudyFi dělá i nudné shrnutí vizuálně &#x27;aesthetic&#x27;, ne jen funkční.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.spiegel.de/ausland/sachsen-wie-zwei-frauen-mit-ihrem-wohnprojekt-die-einsamkeit-bezwingen-nur-gute-nachrichten-a-4b9de53e-3844-465f-b2d2-b579df5788df#ref=rss" target="_blank" rel="noopener">Dvě ženy řeší osamělost bydlením</a></p>
+              <div class="reach">
+                <div class="rnum">25</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:25%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">lifestyle</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Ženy v Sasku si vytvořily komunitní bydlení jako lék na osamělost.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Krátké video &#x27;proč je osamělost ve studiu reálná a co s tím&#x27; - inspirace komunitním řešením. Ukázat, jak StudyFi studijní skupiny/sdílení poznámek dělají z učení méně osamělou věc, ne jen produktivitu.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.spiegel.de/karriere/raetsel-der-woche-wie-gross-ist-das-gruene-rechteck-a-52e21276-c2a9-48cb-818f-261f38200725#ref=rss" target="_blank" rel="noopener">Hádanka týdne: zelený obdélník</a></p>
+              <div class="reach">
+                <div class="rnum">20</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:20%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">kuriozita</span><span class="chip t-meme">duet</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Čtenáři řeší matematickou hádanku o velikosti zeleného obdélníku.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Duet video, kde StudyFi AI řeší hádanku v reálném čase s komentářem &#x27;takhle rychle ti pomůžu i s fyzikou&#x27;. Hook: &#x27;Vyřešil jsem hádanku týdne rychleji než najdeš sešit v batohu.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">5</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.spiegel.de/partnerschaft/beziehung-und-selbstwert-wie-maenner-zufriedener-und-selbstbewusster-lieben-koennen-a-88491628-15f0-4145-8781-6b0c203c1ba7#ref=rss" target="_blank" rel="noopener">Jak milovat se sebevědomím</a></p>
+              <div class="reach">
+                <div class="rnum">22</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:22%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">vztahy</span><span class="chip t-meme">skeč</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Článek radí mužům, jak být spokojenější a sebevědomější ve vztazích.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Skit &#x27;sebevědomí v učení vs. ve vztahu&#x27; - paralela mezi tím, jak se bát zeptat na rande a bát se zeptat na otázku v hodině. Payoff: StudyFi AI je bezpečný prostor zeptat se na &#x27;blbou otázku&#x27; bez trapasu.</dd>
+            </dl>
+          </div>
+        </article></div></div><div class="rwrap" data-region="latam"><div class="rgroup"><span class="rflag">🌎 LATAM</span><span class="count">z médií</span></div><div class="radar"><article class="trend">
+          <div class="rank">1</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.clarin.com/estados-unidos/1879-cientificos-michigan-preservaron-semillas-experimento-vanguardia-142-anos-despues-germinaron-pasar-siglo-tierra_0_q7cBNpBJlv.html" target="_blank" rel="noopener">142 let staré semínko vyklíčilo</a></p>
+              <div class="reach">
+                <div class="rnum">40</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:40%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">věda/kuriozita</span><span class="chip t-direct">carousel</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Vědci v Michiganu nechali po 142 letech vyklíčit semínka uložená pro dlouhodobý experiment.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Carousel &#x27;Co vydrží déle než tvoje motivace do matiky&#x27; - srovnání semínka (142 let čekání) s poznámkami z prváku, co nikdo nikdy neotevřel. Hook: &#x27;Tohle semínko čekalo déle, než trvá tvoje bakalářka.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">2</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.clarin.com/estados-unidos/sr-71-blackbird-fuerza-aerea-eeuu-desintegro-completo-mach-318-piloto-arrancado-aeronave-convirtiendose-hecho-historico-aviacion-militar_0_ynwjAfqRD1.html" target="_blank" rel="noopener">Pilot přežil rozpad letadla při Mach 3</a></p>
+              <div class="reach">
+                <div class="rnum">55</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:55%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">věda/historie</span><span class="chip t-meme">skeč</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Letoun SR-71 Blackbird se při rychlosti Mach 3.18 rozpadl ve vzduchu a pilot katastrofu zázrakem přežil.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Skit: student sedí nad rozvrhem a ten se mu &#x27;rozpadá&#x27; stejně rychle jako SR-71 - rychlé střihy + fakt o G-síle a reakčním čase. Hook: &#x27;Když se ti termíny rozpadnou rychlostí Mach 3.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">3</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.jornada.com.mx/2026/10/31/deportes/a09n2dep?partner=rss" target="_blank" rel="noopener">Checo Pérez se vrací do F1</a></p>
+              <div class="reach">
+                <div class="rnum">35</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:35%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">sport</span><span class="chip t-meme">reakce/stitch</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Sergio &#x27;Checo&#x27; Pérez si zajistil místo v elitní F1 pro příští sezónu.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Reakce video na comeback s textem &#x27;Checo se vrátil po pauze, ty se vrať k učení po prázdninách.&#x27; Paralela mezi sportovním návratem a restartem studijní rutiny po dlouhé odmlce.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">4</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.bbc.com/mundo/articles/c60me2mwjygko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Botero: &#x27;Nemaluju buclaté ženy&#x27;</a></p>
+              <div class="reach">
+                <div class="rnum">30</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:30%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">umění/kultura</span><span class="chip t-direct">carousel</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Slavný kolumbijský umělec vysvětlil, že jeho nadrozměrné postavy nejsou o váze, ale o objemu a perspektivě.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Carousel &#x27;Umění, které si lidi vykládají špatně&#x27; - rozebrat Boterův styl jako lekci kritického myšlení pro dějiny umění. Hook: &#x27;Tohle se učí u zkoušky z umění a skoro nikdo to nepochopí správně.&#x27;</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">5</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.bbc.com/mundo/articles/cmwydvgy4xqzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Nejrychlejší zvířata vs. člověk</a></p>
+              <div class="reach">
+                <div class="rnum">45</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:45%;background:var(--heat-2)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">věda/kuriozita</span><span class="chip t-direct">carousel</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>Článek srovnává rychlost nejrychlejších zvířat na planetě s tou lidskou v hypotetickém závodě.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Quiz carousel &#x27;Kdo by vyhrál: ty v pondělí ráno na zkoušku vs. gepard&#x27; - fun fakta o rychlosti a reakčním čase propojené s tím, jak rychle se dá napěchovat učivo před testem.</dd>
+            </dl>
+          </div>
+        </article><article class="trend">
+          <div class="rank">6</div>
+          <div class="tbody">
+            <div class="head-row">
+              <p class="headline"><a href="https://www.eltiempo.com/colombia/otras-ciudades/trabajo-si-hay-mas-de-20-000-vacantes-en-el-empleo-fest-2026-que-se-llevara-a-cabo-en-medellin-en-el-centro-de-convenciones-plaza-mayor-3597769" target="_blank" rel="noopener">Veletrh práce s 20 000 pozicemi</a></p>
+              <div class="reach">
+                <div class="rnum">28</div><div class="rlbl">dosah</div>
+                <div class="bar"><span style="width:28%;background:var(--heat-3)"></span></div>
+              </div>
+            </div>
+            <div class="chips"><span class="chip cat">školství/kariéra</span><span class="chip t-direct">přímo chytit</span></div>
+            <dl class="def">
+              <dt>Co se stalo</dt><dd>V Medellínu se koná Empleo Fest 2026 nabízející přes 20 000 volných pracovních míst.</dd>
+              <dt class="play">StudyFi úhel</dt><dd class="studyfi">Direct video &#x27;Jak nepropásnout šanci na veletrhu práce&#x27; - rychlý guide na životopis a sebeprezentaci. Hook: &#x27;20 000 volných míst, nula šancí bez přípravy - takhle se na to jde.&#x27;</dd>
+            </dl>
+          </div>
+        </article></div></div><script>(function(){var b=document.querySelectorAll(".fbtn");var g=document.querySelectorAll(".rwrap");b.forEach(function(x){x.addEventListener("click",function(){b.forEach(function(y){y.classList.remove("active")});x.classList.add("active");var f=x.dataset.f;g.forEach(function(w){w.style.display=(f==="all"||w.dataset.region===f)?"":"none"})})})})();</script>
+      <section><h2>🎯 Co natočit — konkrétní posty</h2><p class="sub">Napsáno Claudem na míru dnešním trendům a zvukům. Vezmi a natoč — hook, záběry, caption, zvuk.</p><div class="posts"><article class="post" style="--cat:#e8564a">
+          <div class="post-head">
+            <span class="post-cat">Kalendář</span>
+            <span class="post-title">Poslední den uzávěrky</span>
+          </div>
+          <p class="post-hook">🎬 Dneska zavírají appky. Dýchej.</p>
+          <ol class="post-shots"><li>Telefon s countdownem na 0:00:00, ruka se chvěje nad enter</li><li>Rychlý checklist na obrazovce - esej, doporučení, poplatek, odesláno?</li><li>Výdech a odhození telefonu na postel</li></ol>
+          <p class="post-cap">✍️ Žádný studijní obsah dneska, jen rychlej checklist než klikneš submit.</p>
+          <div class="post-tags"><span class="ptag">#collegeapps</span><span class="ptag">#applicationseason</span><span class="ptag">#deadlineday</span><span class="ptag">#studentlife</span><span class="ptag">#studyfi</span></div>
+          <div class="post-foot"><span class="p-why">💡 Zachytává panický search traffic přesně v den nula a dává jasnou akci místo studijní rady, která dnes nikoho nezajímá.</span></div>
+        </article><article class="post" style="--cat:#e8564a">
+          <div class="post-head">
+            <span class="post-cat">Kalendář</span>
+            <span class="post-title">5 minut do submitu</span>
+          </div>
+          <p class="post-hook">🎬 Stihneš ještě zkontrolovat tyhle 3 věci.</p>
+          <ol class="post-shots"><li>Scroll přes PDF eseje naposled, hledání překlepů</li><li>Zoom na tlačítko &#x27;Submit Application&#x27;</li><li>Dlouhý výdech po kliknutí, pak úsměv</li></ol>
+          <p class="post-cap">✍️ Appku na studium ti teď nepomůže, tohle jo.</p>
+          <div class="post-tags"><span class="ptag">#collegeapplication</span><span class="ptag">#lastminute</span><span class="ptag">#applyseason</span><span class="ptag">#studentlife</span><span class="ptag">#studyfi</span></div>
+          <div class="post-foot"><span class="p-why">💡 Respektuje administrativní fázi uzávěrky - rychlý, konkrétní a nulová snaha prodávat produkt ve špatnou chvíli.</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Když se chceš vzdát</span>
+          </div>
+          <p class="post-hook">🎬 Nejsi líný. Jsi vyhořelej.</p>
+          <ol class="post-shots"><li>Zavřenej sešit, telefon vedle, prázdnej pohled do zdi</li><li>Text na obrazovce: &#x27;to, co cítíš, má jméno&#x27;</li><li>Otevření appky - jeden mikro-krok místo celýho úkolu najednou</li></ol>
+          <p class="post-cap">✍️ Pro každýho, kdo dneska psal &#x27;chci to vzdát&#x27; do redditu ve 2 ráno.</p>
+          <div class="post-tags"><span class="ptag">#studymotivation</span><span class="ptag">#adhdstudytips</span><span class="ptag">#burnout</span><span class="ptag">#studytok</span><span class="ptag">#studyfi</span></div>
+          <div class="post-foot"><span class="p-why">💡 Reaguje na nejrelevantnější bolest dne (rel 9.82) empatií místo motivačních keců, což si studenti okamžitě pamatují.</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Timer bez kravin</span>
+          </div>
+          <p class="post-hook">🎬 Tvůj studijní timer tě rozptyluje víc než Insta.</p>
+          <ol class="post-shots"><li>Scroll přes timer app plnou badge, streaků a reklam</li><li>Kontrast - jedna obrazovka, jen čas a start</li><li>Ruka odkládá telefon mimo dosah, soustředěnej pohled na sešit</li></ol>
+          <p class="post-cap">✍️ Postavili jsme timer, co na tebe nekřičí, jen tiká.</p>
+          <div class="post-tags"><span class="ptag">#studytools</span><span class="ptag">#focustimer</span><span class="ptag">#studywithme</span><span class="ptag">#productivity</span><span class="ptag">#studyfi</span></div>
+          <div class="post-foot"><span class="p-why">💡 Kopíruje konkrétní frustraci z redditu (bloated timers) a dává jasný kontrast jako řešení bez prodávání &#x27;featur&#x27;.</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">Proč pořád usínáš</span>
+          </div>
+          <p class="post-hook">🎬 Usínáš nad učebnicí? Tohle je proč.</p>
+          <ol class="post-shots"><li>Hlava padá nad knihou, oči se zavírají</li><li>Split screen - žádný pauzy vs. 25min bloky s přestávkou</li><li>Notifikace appky &#x27;pauza teď&#x27; - protažení, douška vody</li></ol>
+          <p class="post-cap">✍️ Spoiler: není to lenost, mozek jen křičí o pauzu.</p>
+          <div class="post-tags"><span class="ptag">#studytips</span><span class="ptag">#focusissues</span><span class="ptag">#studentlife</span><span class="ptag">#pomodoro</span><span class="ptag">#studyfi</span></div>
+          <div class="post-foot"><span class="p-why">💡 Normalizuje únavu jako tělesný signál místo charakterové vady a přirozeně vede k funkci appky s pauzami.</span></div>
+        </article><article class="post" style="--cat:#6d5efc">
+          <div class="post-head">
+            <span class="post-cat">Studijní</span>
+            <span class="post-title">45 dní do zkoušky</span>
+          </div>
+          <p class="post-hook">🎬 Je pozdě začít? Spoiler: není.</p>
+          <ol class="post-shots"><li>Kalendář s countdownem 45 dní, zvýrazněnej den zkoušky</li><li>Appka rozdělí látku na malý denní bloky</li><li>Checkboxy, co se plní den po dni, radost u posledního</li></ol>
+          <p class="post-cap">✍️ Nemusíš umět všechno za noc, stačí vědět, co je na dneska.</p>
+          <div class="post-tags"><span class="ptag">#examprep</span><span class="ptag">#studyplan</span><span class="ptag">#studygram</span><span class="ptag">#examseason</span><span class="ptag">#studyfi</span></div>
+          <div class="post-foot"><span class="p-why">💡 Řeší konkrétní časovou úzkost ukázáním rozložení na zvládnutelné kousky, přesně podle bolesti z redditu.</span></div>
+        </article><article class="post" style="--cat:#f0913a">
+          <div class="post-head">
+            <span class="post-cat">Moment</span>
+            <span class="post-title">Ďábel převzal kontrolu</span>
+          </div>
+          <p class="post-hook">🎬 Řidiče prej posedl ďábel. My to známe.</p>
+          <ol class="post-shots"><li>Meme formát - screenshot headline o řidiči a ďáblovi</li><li>Cut na studenta co o půlnoci prokrastinuje před zkouškou</li><li>Text na obrazovce: &#x27;deadline posedlost je reálná&#x27;</li></ol>
+          <p class="post-cap">✍️ Nebyl to ďábel, byl to deadline o půlnoci - known feeling.</p>
+          <div class="post-tags"><span class="ptag">#studentlife</span><span class="ptag">#relatable</span><span class="ptag">#deadlinemood</span><span class="ptag">#funnystudy</span><span class="ptag">#studyfi</span></div>
+          <div class="post-foot"><span class="p-why">💡 Virální news moment jako vtipný most k univerzální studentské zkušenosti s panikou před uzávěrkou.</span></div>
+        </article><article class="post" style="--cat:#f0913a">
+          <div class="post-head">
+            <span class="post-cat">Moment</span>
+            <span class="post-title">Papež odmítl zásluhy</span>
+          </div>
+          <p class="post-hook">🎬 I papež říká, že to nebyl on.</p>
+          <ol class="post-shots"><li>Screenshot headline o papeži a White Sox</li><li>Cut - student ukazuje na appku místo na sebe se slovy &#x27;tohle mi pomohlo&#x27;</li><li>Úsměv do kamery, zavření appky po splněným úkolu</li></ol>
+          <p class="post-cap">✍️ Někdy úspěch není o tobě, je o tom, co ti pomohlo projít dnem.</p>
+          <div class="post-tags"><span class="ptag">#funnynews</span><span class="ptag">#studentmood</span><span class="ptag">#collegelife</span><span class="ptag">#dailylaugh</span><span class="ptag">#studyfi</span></div>
+          <div class="post-foot"><span class="p-why">💡 Lehký humorný moment s nízkou produkční náročností, co drží kanál lidským místo neustálého prodávání.</span></div>
+        </article></div></section>
+      <div class="slabel"><h2>Konkurence &amp; edtech</h2><span class="count">jak se veze konkurence</span></div><p class="sdesc">Kde se edtech/study appky vezou na trendech — a kde je mezera. <span class="dim">Odhad Claude z kontextu, ne měřená data.</span></p><div class="comp"><div class="comp-row">
+          <div class="comp-logo" style="background:#12b76a">Kn</div>
+          <div class="comp-b"><div class="cn">Knowunity</div><div class="cd">staví na sdílení poznámek mezi studenty, ale zatím nereaguje na virální &#x27;absurdní headline&#x27; formáty – mezera pro rychlý meme obsah.</div></div>
+          <span class="comp-tag t-watch">příležitost</span>
+        </div><div class="comp-row">
+          <div class="comp-logo" style="background:#5b53e0">Du</div>
+          <div class="comp-b"><div class="cn">Duolingo</div><div class="cd">ukázkově zvládá hrát si s bizarními/virálními tématy přes maskota bez urážení kohokoliv – inspirace pro StudyFi tón.</div></div>
+          <span class="comp-tag t-watch">sledovat</span>
+        </div><div class="comp-row">
+          <div class="comp-logo" style="background:#f0913a">Qu</div>
+          <div class="comp-b"><div class="cn">Quizlet</div><div class="cd">drží se čistě funkčního obsahu (flashcards tipy), nevyužívá formát &#x27;quirky news meme&#x27; vůbec – prostor pro StudyFi se odlišit humorem.</div></div>
+          <span class="comp-tag t-watch">příležitost</span>
+        </div><div class="comp-row">
+          <div class="comp-logo" style="background:#e8564a">Le</div>
+          <div class="comp-b"><div class="cn">Let&#x27;s Study</div><div class="cd">komunitně orientovaný, ale pomalejší v reakci na denní trendy – StudyFi může být rychlejší v meme-reakcích.</div></div>
+          <span class="comp-tag t-new">nový tah</span>
+        </div></div>
+      
+      <section class="cal"><h2>⏰ Kalendář — tohle víte dopředu</h2><p class="sub">Newsjacking je loterie. Maturitu a zkouškové znáte předem.</p><div class="cal-grid">
+        <article class="cal-card" style="--phase:#8a8a99">
+          <div class="cal-top">
+            <span class="phase-pill">• ⏳ UZÁVĚRKA</span>
+            <span class="cal-when"><strong>DNES</strong></span>
+          </div>
+          <h3>College application season <span class="market">EN</span></h3>
+          <p class="cal-gist">Urgence, ale administrativní — ne studijní.</p>
+          <p class="cal-note">Common App deadlines.</p>
+          <ul class="cal-ideas"><li>Checklist &#x27;nezapomeň na&#x27; — praktická pomoc</li><li>Neprodávejte učení. Tady ještě nikdo nestuduje.</li></ul>
+        </article></div></section>
+      
+    </main>
+    <footer>
+      <p>Vygenerováno 2026-11-01 v 09:10 · StudyFi Trend Radar. Data z veřejných zdrojů; výběr, klastrování a StudyFi úhly píše Claude.</p>
+    </footer></body>
+</html>
